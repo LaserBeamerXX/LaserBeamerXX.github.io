@@ -1,32 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bill Nye's Climate Crusade</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Bill Nye's Climate Crusade</h1>
-    <p>Welcome to the world of climate change! Your decisions will shape the future.</p>
-    
-    <p>Choose your character:</p>
-    <button id="billNyeBtn">Bill Nye</button>
-    <button id="customCharacterBtn">Custom Character</button>
+    <div class="container">
+        <h1>Bill Nye's Climate Crusade</h1>
+        <p>An Educational Adventure</p>
+        <button id="start-button">Start Game</button>
+    </div>
 
-    <div id="gameContent"></div>
-    
-    <script>
-        // Game logic goes here
-        document.getElementById('billNyeBtn').addEventListener('click', function() {
-            startGame('Bill Nye');
-        });
-
-        document.getElementById('customCharacterBtn').addEventListener('click', function() {
-            const characterName = prompt('Enter your custom character name:');
-            startGame(characterName);
-        });
-
-        function startGame(characterName) {
-            document.getElementById('gameContent').innerHTML = `<p>Welcome, ${characterName}! You're on a mission to save the planet from climate change.</p>`;
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
