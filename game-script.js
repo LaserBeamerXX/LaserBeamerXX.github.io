@@ -1,54 +1,37 @@
-// JavaScript for the level
+document.addEventListener('DOMContentLoaded', function () {
+    const environment = document.getElementById('environment');
+    const treeIcon = document.getElementById('tree-icon');
+    const waterIcon = document.getElementById('water-icon');
+    let plantingMode = false;
 
-// Track the selected tool (null, "plant", or "water")
-let selectedTool = null;
+    // Function to handle tree planting
+    treeIcon.addEventListener('click', function () {
+        if (!plantingMode) {
+            plantingMode = true;
+            treeIcon.style.border = '2px solid green';
+            waterIcon.style.border = 'none';
+            environment.addEventListener('click', plantTree);
+        } else {
+            plantingMode = false;
+            treeIcon.style.border = 'none';
+            environment.removeEventListener('click', plantTree);
+        }
+    });
 
-// Add an event listener for the "Plant Tree" button
-document.getElementById("tree-tool").addEventListener("click", function () {
-    if (selectedTool === "plant") {
-        // If "Plant Tree" is already selected, unselect it
-        selectedTool = null;
-        this.style.backgroundColor = "#FFA726";
-    } else {
-        // If "Plant Tree" is not selected, select it
-        selectedTool = "plant";
-        this.style.backgroundColor = "#4CAF50";
-        // Deselect the "Water" tool if it's selected
-        document.getElementById("water-tool").style.backgroundColor = "#FFA726";
+    // Function to handle tree planting on click
+    function plantTree(event) {
+        const tree = document.createElement('div');
+        tree.classList.add('tree');
+        tree.style.left = event.clientX - environment.getBoundingClientRect().left - 25 + 'px';
+        tree.style.top = event.clientY - environment.getBoundingClientRect().top - 25 + 'px';
+        environment.appendChild(tree);
     }
-});
 
-// Add an event listener for the "Water" button
-document.getElementById("water-tool").addEventListener("click", function () {
-    if (selectedTool === "water") {
-        // If "Water" is already selected, unselect it
-        selectedTool = null;
-        this.style.backgroundColor = "#FFA726";
-    } else {
-        // If "Water" is not selected, select it
-        selectedTool = "water";
-        this.style.backgroundColor = "#4CAF50";
-        // Deselect the "Plant Tree" tool if it's selected
-        document.getElementById("tree-tool").style.backgroundColor = "#FFA726";
-    }
-});
-
-// Add event listener to the environment image for interactivity
-document.getElementById("environment").addEventListener("click", function (event) {
-    if (selectedTool === "plant") {
-        // If "Plant Tree" is selected, clone a tree and make it immovable
-        const tree = document.createElement("div");
-        tree.className = "tree";
-        tree.style.left = `${event.clientX - this.offsetLeft}px`;
-        tree.style.top = `${event.clientY - this.offsetTop}px`;
-        this.appendChild(tree);
-
-        // Make the tree immovable
-        tree.addEventListener("click", function (event) {
-            event.stopPropagation();
-        });
-    } else if (selectedTool === "water") {
-        // If "Water" is selected, simulate watering at the clicked location (you can add more logic here)
-        console.log("Watered at: ", event.clientX - this.offsetLeft, event.clientY - this.offsetTop);
-    }
+    // Function to handle watering (not fully implemented)
+    waterIcon.addEventListener('click', function () {
+        if (!plantingMode) {
+            // Add watering logic here, like increasing tree growth or health.
+            console.log('Watering the trees.');
+        }
+    });
 });
