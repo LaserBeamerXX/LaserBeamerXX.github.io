@@ -1,74 +1,35 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #71C0B7;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    padding: 0;
+    overflow: hidden;
 }
 
 .game-container {
-    text-align: center;
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    background-color: #EEEEEE;
 }
 
-h1 {
-    font-size: 36px;
-    margin: 0;
-    color: #333333;
-}
-
-p {
-    font-size: 18px;
-    color: #666666;
-}
-
-button {
-    background-color: #FFA726;
-    border: none;
-    border-radius: 5px;
-    color: #FFFFFF;
-    font-size: 24px;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #FF9800;
-}
-
-.game-environment {
-    background-image: url('valley-image.jpg'); /* Replace with your actual image */
-    background-size: cover;
-    width: 600px;
-    height: 400px;
+.game-screen {
+    flex: 1;
     position: relative;
-    margin: 20px auto;
 }
 
-.icon {
-    width: 50px;
-    height: 50px;
-    margin: 10px;
+#inventory {
+    width: 20%;
+    background-color: #71C0B7;
+    padding: 10px;
+    text-align: center;
+    overflow-y: auto;
+}
+
+#inventory h2 {
+    color: #FFFFFF;
+    margin: 0;
+}
+
+#inventory img {
+    max-width: 100px;
     cursor: pointer;
-
-.tree {
-    width: 20px;
-    height: 40px;
-    background-color: #228B22; /* Green color for trees */
-    position: absolute;
-    bottom: 0;
-}
-
-.water {
-    width: 100%;
-    height: 20px;
-    background-color: #1E90FF; /* Blue color for water */
-    position: absolute;
-    bottom: 0;
-    left: 0;
 }
