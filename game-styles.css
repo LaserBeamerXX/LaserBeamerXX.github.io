@@ -42,11 +42,27 @@ button:hover {
     background-color: #FF9800;
 }
 
-.game-stats {
-    text-align: left;
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-around;
+.game-environment {
+    width: 400px;
+    height: 300px;
+    background-color: #B2C66E; /* Green background to represent the valley */
+    position: relative;
+    display: inline-block;
 }
 
-/* Additional styling for game statistics */
+.tree {
+    width: 20px;
+    height: 40px;
+    background-color: #228B22; /* Green color for trees */
+    position: absolute;
+    bottom: 0;
+}
+
+.water {
+    width: 100%;
+    height: 20px;
+    background-color: #1E90FF; /* Blue color for water */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
