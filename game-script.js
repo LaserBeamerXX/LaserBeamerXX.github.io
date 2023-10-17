@@ -1,37 +1,22 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const environment = document.getElementById('environment');
-    const treeIcon = document.getElementById('tree-icon');
-    const waterIcon = document.getElementById('water-icon');
-    let plantingMode = false;
+// Store references to the game screen and inventory
+const gameScreen = document.getElementById("game-screen");
+const inventory = document.getElementById("inventory");
 
-    // Function to handle tree planting
-    treeIcon.addEventListener('click', function () {
-        if (!plantingMode) {
-            plantingMode = true;
-            treeIcon.style.border = '2px solid green';
-            waterIcon.style.border = 'none';
-            environment.addEventListener('click', plantTree);
-        } else {
-            plantingMode = false;
-            treeIcon.style.border = 'none';
-            environment.removeEventListener('click', plantTree);
-        }
-    });
-
-    // Function to handle tree planting on click
-    function plantTree(event) {
-        const tree = document.createElement('div');
-        tree.classList.add('tree');
-        tree.style.left = event.clientX - environment.getBoundingClientRect().left - 25 + 'px';
-        tree.style.top = event.clientY - environment.getBoundingClientRect().top - 25 + 'px';
-        environment.appendChild(tree);
+// Event listener for adding trees to the inventory
+gameScreen.addEventListener("click", (event) => {
+    if (event.target.tagName === "IMG") {
+        // Clone the tree image and add it to the inventory
+        const treeImage = event.target.cloneNode(true);
+        inventory.appendChild(treeImage);
+        // Add a click event listener to the tree image in the inventory
+        treeImage.addEventListener("click", () => {
+            // Clone the tree image when clicked in the inventory
+            const clonedTree = treeImage.cloneNode(true);
+            // Position the cloned tree at the point where the user clicked on the game screen
+            clonedTree.style.position = "absolute";
+            clonedTree.style.left = `${event.clientX - gameScreen.getBoundingClientRect().left}px`;
+            clonedTree.style.top = `${event.clientY - gameScreen.getBoundingClientRect().top}px`;
+            gameScreen.appendChild(clonedTree);
+        });
     }
-
-    // Function to handle watering (not fully implemented)
-    waterIcon.addEventListener('click', function () {
-        if (!plantingMode) {
-            // Add watering logic here, like increasing tree growth or health.
-            console.log('Watering the trees.');
-        }
-    });
 });
