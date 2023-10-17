@@ -1,35 +1,40 @@
 body {
     margin: 0;
-    padding: 0;
     overflow: hidden;
 }
 
-.game-container {
-    display: flex;
-    justify-content: space-between;
+#game-container {
+    width: 100vw;
     height: 100vh;
-    background-color: #EEEEEE;
+    background: url('valley-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
 }
 
-.game-screen {
-    flex: 1;
+#background {
+    width: 100%;
+    height: 100%;
     position: relative;
 }
 
+#tree {
+    position: absolute;
+    display: none;
+}
+
 #inventory {
+    background-color: #ffc107; /* Yellow color for inventory */
     width: 20%;
-    background-color: #71C0B7;
-    padding: 10px;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
     text-align: center;
-    overflow-y: auto;
+    font-family: Arial, sans-serif;
 }
 
-#inventory h2 {
-    color: #FFFFFF;
-    margin: 0;
-}
-
-#inventory img {
-    max-width: 100px;
-    cursor: pointer;
+h2 {
+    color: #333;
 }
