@@ -27,24 +27,35 @@ function formatTime(seconds) {
 }
 
 // Function to plant trees
-function plantTree() {
+function plantTree(event) {
     if (waterResources >= 10) {
         treesPlanted++;
         waterResources -= 10;
         biodiversity += 5;
+        
+        const tree = document.createElement("div");
+        tree.className = "tree";
+        tree.style.left = (event.clientX - event.target.offsetLeft - 10) + "px";
+        document.getElementById("environment").appendChild(tree);
+        
         updateGameStatus();
     } else {
         alert("Not enough water resources to plant a tree.");
     }
 }
 
-// Function to water trees
-function waterTree() {
-    if (treesPlanted > 0) {
-        treesPlanted--;
-        waterResources += 20;
-        updateGameStatus();
-    }
+// Function to toggle tree visibility
+function toggleTrees() {
+    const trees = document.querySelectorAll(".tree");
+    trees.forEach((tree) => {
+        tree.style.display = tree.style.display === "none" ? "block" : "none";
+    });
+}
+
+// Function to toggle water visibility
+function toggleWater() {
+    const water = document.querySelector(".water");
+    water.style.display = water.style.display === "none" ? "block" : "none";
 }
 
 function updateGameTime() {
@@ -55,7 +66,8 @@ function updateGameTime() {
 }
 
 document.getElementById("plant-button").addEventListener("click", plantTree);
-document.getElementById("water-button").addEventListener("click", waterTree);
+document.getElementById("toggle-trees").addEventListener("click", toggleTrees);
+document.getElementById("toggle-water").addEventListener("click", toggleWater);
 
 // Simulate time passing
 setInterval(updateGameTime, 1000);
