@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bill Nye's Climate Crusade - Game Level</title>
+    <title>Level 1: Reforest the Valley</title>
     <link rel="stylesheet" href="game-styles.css">
 </head>
 <body>
     <div class="game-container">
-        <h1>Level 1</h1>
-        <p>Complete the mission to combat climate change!</p>
-        <button id="complete-button">Complete Mission</button>
+        <h1>Level 1: Reforest the Valley</h1>
+        <p>Complete the mission to combat deforestation!</p>
+        <div class="game-stats">
+            <p>Trees Planted: <span id="planted-trees">0</span></p>
+            <p>Water Resources: <span id="water-resources">100</span></p>
+            <p>Biodiversity: <span id="biodiversity">0%</span></p>
+            <p>Time Left: <span id="time-left">5:00</span></p>
+        </div>
+        <button id="plant-button">Plant Tree</button>
+        <button id="water-button">Water Trees</button>
     </div>
 
     <script src="game-script.js"></script>
