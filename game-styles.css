@@ -41,3 +41,12 @@ button {
 button:hover {
     background-color: #FF9800;
 }
+
+.game-stats {
+    text-align: left;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Additional styling for game statistics */
