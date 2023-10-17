@@ -3,23 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Level 1: Reforest the Valley</title>
+    <title>Bill Nye's Climate Crusade - Level 1</title>
     <link rel="stylesheet" href="game-styles.css">
 </head>
 <body>
     <div class="game-container">
         <h1>Level 1: Reforest the Valley</h1>
-        <p>Complete the mission to combat deforestation!</p>
-        <div class="game-environment" id="environment"></div>
-        <div class="game-stats">
-            <p>Trees Planted: <span id="planted-trees">0</span></p>
-            <p>Water Resources: <span id="water-resources">100</span></p>
-            <p>Biodiversity: <span id="biodiversity">0%</span></p>
-            <p>Time Left: <span id="time-left">5:00</span></p>
+        <p>Click the tree icon to plant a tree. Click the water icon to water the trees.</p>
+        <div class="game-environment" id="environment">
+            <!-- This is where the environment (image) will be displayed -->
         </div>
-        <button id="plant-button">Plant Tree</button>
-        <button id="toggle-trees">Toggle Trees</button>
-        <button id="toggle-water">Toggle Water</button>
+        <div class="inventory">
+            <img src="tree.png" id="tree-icon" class="icon" alt="Tree Icon">
+            <img src="watering-can.png" id="water-icon" class="icon" alt="Water Icon">
+        </div>
     </div>
 
     <script src="game-script.js"></script>
