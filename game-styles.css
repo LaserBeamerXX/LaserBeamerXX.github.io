@@ -1,4 +1,3 @@
-/* CSS for the level */
 body {
     font-family: Arial, sans-serif;
     background-color: #71C0B7;
@@ -18,28 +17,14 @@ body {
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 36px;
     margin: 0;
     color: #333333;
 }
 
-.environment img {
-    max-width: 100%;
-    margin-top: 20px;
-}
-
-.inventory {
-    text-align: center;
-    margin-top: 20px;
-}
-/* Add this to your level1-styles.css */
-.tree {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: #4CAF50;
-    border-radius: 50%;
-    z-index: 1; /* Ensures trees appear above the background image */
+p {
+    font-size: 18px;
+    color: #666666;
 }
 
 button {
@@ -47,12 +32,43 @@ button {
     border: none;
     border-radius: 5px;
     color: #FFFFFF;
-    font-size: 18px;
+    font-size: 24px;
     padding: 10px 20px;
-    margin: 10px;
     cursor: pointer;
 }
 
 button:hover {
     background-color: #FF9800;
+}
+
+.game-environment {
+    background-image: url('valley-image.jpg'); /* Replace with your actual image */
+    background-size: cover;
+    width: 600px;
+    height: 400px;
+    position: relative;
+    margin: 20px auto;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    cursor: pointer;
+
+.tree {
+    width: 20px;
+    height: 40px;
+    background-color: #228B22; /* Green color for trees */
+    position: absolute;
+    bottom: 0;
+}
+
+.water {
+    width: 100%;
+    height: 20px;
+    background-color: #1E90FF; /* Blue color for water */
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
