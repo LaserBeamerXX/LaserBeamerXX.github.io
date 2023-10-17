@@ -39,16 +39,16 @@ document.getElementById("environment").addEventListener("click", function (event
         // If "Plant Tree" is selected, create a tree at the clicked location
         const tree = document.createElement("div");
         tree.className = "tree";
-        tree.style.left = `${event.clientX - this.offsetLeft - 25}px`; // Adjust for the tree's size
-        tree.style.top = `${event.clientY - this.offsetTop - 25}px`; // Adjust for the tree's size
-
-        // Make the tree immovable
-        tree.style.position = "absolute";
-        tree.style.pointerEvents = "none"; // Disable pointer events for the tree, so it can't be moved
-
+        tree.style.left = `${event.clientX - this.offsetLeft}px`;
+        tree.style.top = `${event.clientY - this.offsetTop}px`;
         this.appendChild(tree);
-    } else if (selectedTool === "water") {
-        // If "Water" is selected, simulate watering at the clicked location (you can add more logic here)
-        console.log("Watered at: ", event.clientX - this.offsetLeft, event.clientY - this.offsetTop);
+    }
+});
+
+// Add event listener for tree interaction (to prevent propagation)
+document.addEventListener("click", function () {
+    if (selectedTool === "water") {
+        // If "Water" is selected, simulate watering (you can add more logic here)
+        console.log("Watered the tree.");
     }
 });
