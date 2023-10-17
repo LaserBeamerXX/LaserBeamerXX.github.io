@@ -20,6 +20,5 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        deploy_key: ${{ ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBBFJDkI1f8oYcQ1i0CtsXALQIpejd6gzTQOacIchfES Antkillam@students.westerlyps.org
- }}
+        deploy_key: ${{ secrets.DEPLOY_KEY }}
         publish_dir: ./public # Adjust this path to match your output directory
