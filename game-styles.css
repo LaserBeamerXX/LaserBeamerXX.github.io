@@ -1,18 +1,43 @@
 /* CSS for the game level */
-/* ... Your existing CSS styles ... */
-
-.game-environment {
-    background-image: url('valley-image.jpg'); /* Replace with your actual image */
-    background-size: cover;
-    width: 600px;
-    height: 400px;
-    position: relative;
-    margin: 20px auto;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #71C0B7;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.icon {
-    width: 50px;
-    height: 50px;
-    margin: 10px;
+.game-container {
+    text-align: center;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 36px;
+    margin: 0;
+    color: #333333;
+}
+
+p {
+    font-size: 18px;
+    color: #666666;
+}
+
+button {
+    background-color: #FFA726;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: 24px;
+    padding: 10px 20px;
     cursor: pointer;
+}
+
+button:hover {
+    background-color: #FF9800;
 }
