@@ -36,42 +36,19 @@ document.getElementById("water-tool").addEventListener("click", function () {
 // Add event listener to the environment image for interactivity
 document.getElementById("environment").addEventListener("click", function (event) {
     if (selectedTool === "plant") {
-        // If "Plant Tree" is selected, create a tree at the clicked location
+        // If "Plant Tree" is selected, clone a tree and make it immovable
         const tree = document.createElement("div");
         tree.className = "tree";
         tree.style.left = `${event.clientX - this.offsetLeft}px`;
         tree.style.top = `${event.clientY - this.offsetTop}px`;
         this.appendChild(tree);
-        
-        // Disable tree planting tool after planting
-        document.getElementById("tree-tool").style.backgroundColor = "#FFA726";
-        selectedTool = null;
+
+        // Make the tree immovable
+        tree.addEventListener("click", function (event) {
+            event.stopPropagation();
+        });
     } else if (selectedTool === "water") {
         // If "Water" is selected, simulate watering at the clicked location (you can add more logic here)
         console.log("Watered at: ", event.clientX - this.offsetLeft, event.clientY - this.offsetTop);
-    }
-});
-
-// Add event listener for clicking on a planted tree to select it
-document.getElementById("environment").addEventListener("click", function (event) {
-    if (selectedTool === "select") {
-        // You can implement logic to select and interact with the tree here
-        console.log("Selected tree at: ", event.clientX - this.offsetLeft, event.clientY - this.offsetTop);
-    }
-});
-
-// Add an event listener for the "Select Tree" button
-document.getElementById("select-tool").addEventListener("click", function () {
-    if (selectedTool === "select") {
-        // If "Select Tree" is already selected, unselect it
-        selectedTool = null;
-        this.style.backgroundColor = "#FFA726";
-    } else {
-        // If "Select Tree" is not selected, select it
-        selectedTool = "select";
-        this.style.backgroundColor = "#4CAF50";
-        // Deselect the "Water" and "Plant Tree" tools if they're selected
-        document.getElementById("water-tool").style.backgroundColor = "#FFA726";
-        document.getElementById("tree-tool").style.backgroundColor = "#FFA726";
     }
 });
