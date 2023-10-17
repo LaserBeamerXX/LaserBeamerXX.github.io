@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reforestation.css">
     <title>Reforestation Rescue</title>
+    <link rel="stylesheet" href="reforestation.css">
 </head>
 <body>
-    <div id="game-container">
-        <div id="background" onclick="plantTree(event)">
-            <img id="tree" src="tree.png" alt="Tree">
+    <div class="game-container">
+        <div class="game-screen" id="game-screen">
+            <!-- Background image -->
+            <img src="valley-image.jpg" alt="Valley Background">
+            <!-- Trees to be added dynamically -->
         </div>
-        <div id="inventory">
+        <div class="inventory" id="inventory">
             <h2>Inventory</h2>
-            <!-- Empty inventory initially -->
+            <!-- Tree images added here -->
         </div>
     </div>
+
     <script src="reforestation.js"></script>
 </body>
 </html>
