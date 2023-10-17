@@ -32,6 +32,15 @@ h1 {
     text-align: center;
     margin-top: 20px;
 }
+/* Add this to your level1-styles.css */
+.tree {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    z-index: 1; /* Ensures trees appear above the background image */
+}
 
 button {
     background-color: #FFA726;
