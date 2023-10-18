@@ -8,7 +8,7 @@ body {
 
 .game-container {
     display: flex;
-    height: 100vh; /* Removed justify-content: space-between; */
+    height: 100vh;
     background-color: #EEEEEE;
 }
 
@@ -18,7 +18,7 @@ body {
 }
 
 #inventory {
-    width: 20%; /* Adjust the width of the inventory as needed */
+    width: 30%; /* Adjust the width as needed to fit on the screen */
     background-color: #71C0B7;
     padding: 10px;
     text-align: center;
