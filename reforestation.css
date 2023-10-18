@@ -18,7 +18,7 @@ body {
 }
 
 #inventory {
-    width: 15%; /* Adjust the width of the inventory as needed */
+    width: 20%; /* Adjust the width of the inventory as needed */
     background-color: #71C0B7;
     padding: 10px;
     text-align: center;
@@ -40,3 +40,12 @@ body {
     border: 2px solid #FFA726; /* Add a border to indicate selection */
     border-radius: 5px;
 }
+/* ... (existing styles) ... */
+
+.inventory-title {
+    color: #FFFFFF;
+    background-color: #71C0B7;
+    margin: 0;
+    padding: 10px;
+}
+
