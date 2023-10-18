@@ -48,10 +48,9 @@ body {
 .tree-count {
     font-size: 18px; /* Adjust the font size as needed */
     color: #4CAF50; /* Set the text color */
-    margin-top: 10px; /* Add some spacing from the game screen and inventory */
-    text-align: center; /* Center the text horizontally */
     position: absolute; /* Position the element absolutely */
     z-index: 1; /* Set a z-index value to place it on top of other elements */
+    top: 10px; /* Position from the top */
+    right: 10px; /* Position from the right */
 }
-
 
