@@ -41,17 +41,3 @@ body {
     border: 2px solid #FFA726; /* Add a border to indicate selection */
     border-radius: 5px;
 }
-
-/* Add this CSS to your reforestation.css file or include it in your HTML file if preferred */
-
-
-/* Style for the tree count display */
-.tree-count {
-    font-size: 18px; /* Adjust the font size as needed */
-    color: white !important; /* Set the text color to white with !important */
-    position: absolute; /* Position the element absolutely */
-    z-index: 1; /* Set a z-index value to place it on top of other elements */
-    top: 10px; /* Position from the top */
-    left: 10px; /* Position from the left */
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* Add a white stroke around the text */
-}
