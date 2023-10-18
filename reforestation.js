@@ -48,4 +48,4 @@ inventory.addEventListener("click", (event) => {
 });
 
 // Initial tree count display
-updateTreeCount();
+updateTreeCount(); 
