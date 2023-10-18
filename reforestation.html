@@ -7,17 +7,24 @@
     <link rel="stylesheet" href="reforestation.css">
 </head>
 <body>
-    <div class="game-container">
-        <div class="game-screen" id="game-screen">
-            <!-- Background image -->
-            <img src="valley-image.jpg" alt="Valley Background">
-        </div>
-        <div class="inventory" id="inventory">
-            <h2>Inventory</h2>
-            <!-- Add the tree image (tree.png) without the selected class -->
-            <img src="tree.png" alt="Tree">
-        </div>
+<!-- Inside your HTML body -->
+<div class="game-container">
+    <div class="game-screen" id="game-screen">
+        <!-- Background image -->
+        <img src="valley-image.jpg" alt="Valley Background">
     </div>
+    <div class="inventory" id="inventory">
+        <h2>Inventory</h2>
+        <!-- Add the tree image (tree.png) without the selected class -->
+        <img src="tree.png" alt="Tree">
+    </div>
+</div>
+
+<!-- Add a div to display the tree count -->
+<div id="tree-count" class="tree-count">Trees Planted: 0</div>
+
+
+    
 
     <script src="reforestation.js"></script>
 </body>
