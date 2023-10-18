@@ -47,10 +47,10 @@ body {
 /* Style for the tree count display */
 .tree-count {
     font-size: 18px; /* Adjust the font size as needed */
-    color: #4CAF50; /* Set the text color */
+    color: white; /* Set the text color to white */
+    text-stroke: 2px #4CAF50; /* Add a text stroke with color */
     position: absolute; /* Position the element absolutely */
     z-index: 1; /* Set a z-index value to place it on top of other elements */
     top: 10px; /* Position from the top */
-    right: 10px; /* Position from the right */
+    left: 10px; /* Position from the left */
 }
-
