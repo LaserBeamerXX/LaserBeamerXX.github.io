@@ -53,5 +53,5 @@ body {
     z-index: 1; /* Set a z-index value to place it on top of other elements */
     top: 10px; /* Position from the top */
     left: 10px; /* Position from the left */
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* Add a white stroke around the text */
 }
-
