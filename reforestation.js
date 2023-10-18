@@ -9,8 +9,8 @@ const requiredTreesToProgress = 10; // Set the required number of trees
 
 // Define an array of levels
 const levels = [
-    { requiredTrees: 10, message: "You've planted enough trees to progress to the next level!", nextLevel: "Eco-City Sustainability Challenge" },
-    { requiredTrees: 15, message: "Great job! You can move on to the next level!" }
+    { requiredTrees: 10, message: "You've planted enough trees to progress to the next level!", nextLevel: "Eco-City Sustainability" },
+    { requiredTrees: 10, message: "Great job! You can move on to the next level!" }
 ];
 
 // Initialize the current level
@@ -38,7 +38,7 @@ function checkProgress() {
         // Redirect to the next level if available
         if (currentLevel < levels.length) {
             // Example: You can redirect the player to a new page for the next level
-            window.location.href = `${levels[currentLevel].nextLevel}.html`;
+            window.location.href = `game.html`;
         } else {
             alert("Congratulations! You've completed all levels.");
         }
