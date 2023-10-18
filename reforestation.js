@@ -2,6 +2,19 @@
 const gameScreen = document.getElementById("game-screen");
 const inventory = document.getElementById("inventory");
 let treeToClone = null; // Initialize as null
+
+// Define variables for tracking the number of planted trees and the required number to progress
+let plantedTrees = 0;
+const requiredTreesToProgress = 10; // Set the required number of trees
+
+// Function to check if the player can progress to the next level
+function checkProgress() {
+    if (plantedTrees >= requiredTreesToProgress) {
+        alert("You've planted enough trees to progress to the next level!");
+        // Add logic to move to the next level here
+    }
+}
+
 // Event listener for adding trees to the inventory
 gameScreen.addEventListener("click", (event) => {
     if (treeToClone) {
@@ -18,6 +31,12 @@ gameScreen.addEventListener("click", (event) => {
 
         // Add the cloned tree image to the game screen
         gameScreen.appendChild(clonedTree);
+
+        // Increment the plantedTrees counter
+        plantedTrees++;
+
+        // Check if the player can progress to the next level
+        checkProgress();
     }
 });
 
