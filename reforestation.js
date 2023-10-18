@@ -18,18 +18,13 @@ gameScreen.addEventListener("click", (event) => {
 // Event listener for selecting a tree to clone
 inventory.addEventListener("click", (event) => {
     if (event.target.tagName === "IMG") {
+        // Toggle the selected class for visual indication
         if (event.target.classList.contains("selected")) {
-            // Deselect the tree if it's already selected
             event.target.classList.remove("selected");
             treeToClone = null; // Clear the selection
         } else {
-            // Select the tree for cloning
-            if (treeToClone) {
-                // Deselect the previously selected tree, if any
-                treeToClone.classList.remove("selected");
-            }
             event.target.classList.add("selected");
-            treeToClone = event.target;
+            treeToClone = event.target; // Store the selected tree for cloning
         }
     }
 });
