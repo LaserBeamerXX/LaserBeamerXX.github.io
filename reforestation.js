@@ -6,11 +6,18 @@ let treeToClone = null; // Initialize as null
 // Event listener for adding trees to the inventory
 gameScreen.addEventListener("click", (event) => {
     if (treeToClone) {
-        // Clone the selected tree image and add it to the game screen
-        const clonedTree = treeToClone.cloneNode(true);
+        // Create a new tree image to add to the game screen
+        const clonedTree = new Image();
+        clonedTree.src = treeToClone.src;
         clonedTree.style.position = "absolute";
-        clonedTree.style.left = `${event.clientX - gameScreen.getBoundingClientRect().left}px`;
-        clonedTree.style.top = `${event.clientY - gameScreen.getBoundingClientRect().top}px`;
+
+        // Calculate the position to center the tree image at the cursor
+        const offsetX = event.clientX - gameScreen.getBoundingClientRect().left - (clonedTree.width / 2);
+        const offsetY = event.clientY - gameScreen.getBoundingClientRect().top - (clonedTree.height / 2);
+        clonedTree.style.left = offsetX + "px";
+        clonedTree.style.top = offsetY + "px";
+
+        // Add the cloned tree image to the game screen
         gameScreen.appendChild(clonedTree);
     }
 });
