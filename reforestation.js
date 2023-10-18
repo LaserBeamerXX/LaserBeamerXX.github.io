@@ -1,7 +1,10 @@
-// Store references to the game screen and inventory
+// Store references to the game screen, inventory, and objectives
 const gameScreen = document.getElementById("game-screen");
 const inventory = document.getElementById("inventory");
+const objectives = document.getElementById("objectives");
 let treeToClone = null; // Initialize as null
+let plantedTrees = 0; // Initialize the count
+
 // Event listener for adding trees to the inventory
 gameScreen.addEventListener("click", (event) => {
     if (treeToClone) {
@@ -18,6 +21,10 @@ gameScreen.addEventListener("click", (event) => {
 
         // Add the cloned tree image to the game screen
         gameScreen.appendChild(clonedTree);
+
+        // Increment the planted trees count
+        plantedTrees++;
+        updateObjectives();
     }
 });
 
@@ -34,3 +41,8 @@ inventory.addEventListener("click", (event) => {
         }
     }
 });
+
+// Function to update the objectives text
+function updateObjectives() {
+    document.getElementById("trees-planted").textContent = `Plant ${plantedTrees}/10 Trees`;
+}
