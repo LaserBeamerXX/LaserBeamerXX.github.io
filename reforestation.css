@@ -1,5 +1,4 @@
-/* Existing CSS styles */
-
+/* Base styles */
 body {
     margin: 0;
     padding: 0;
@@ -8,7 +7,6 @@ body {
 
 .game-container {
     display: flex;
-    height: 100vh;
     background-color: #EEEEEE;
 }
 
@@ -18,7 +16,7 @@ body {
 }
 
 #inventory {
-    width: 40%; /* Adjust the width as needed to fit on the screen */
+    width: 20%; /* Default width for screens smaller than 768px */
     background-color: #71C0B7;
     padding: 10px;
     text-align: center;
@@ -37,6 +35,17 @@ body {
 
 /* Combined style for the selected tree in the inventory */
 #inventory img.selected {
-    border: 2px solid #FFA726; /* Add a border to indicate selection */
+    border: 2px solid #FFA726;
     border-radius: 5px;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    .game-container {
+        height: 100vh; /* Adjust for larger screens */
+    }
+
+    #inventory {
+        width: 30%; /* Adjust the width for screens larger than 768px */
+    }
 }
