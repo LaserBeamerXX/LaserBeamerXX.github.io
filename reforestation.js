@@ -1,23 +1,7 @@
 // Store references to the game screen and inventory
 const gameScreen = document.getElementById("game-screen");
 const inventory = document.getElementById("inventory");
-const backgroundImage = document.getElementById("background-image");
-
-// Function to change the background image based on screen size
-function changeBackgroundImage() {
-    const screenWidth = window.innerWidth;
-    if (screenWidth < 768) {
-        backgroundImage.src = "small-screen-background.jpg";
-    } else {
-        backgroundImage.src = "valley-image.jpg";
-    }
-}
-
-// Initial background image
-changeBackgroundImage();
-
-// Event listener for window resize to dynamically change the background image
-window.addEventListener("resize", changeBackgroundImage);
+let treeToClone = null; // Initialize as null
 
 // Event listener for adding trees to the inventory
 gameScreen.addEventListener("click", (event) => {
