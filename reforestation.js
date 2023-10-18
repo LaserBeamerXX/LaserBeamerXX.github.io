@@ -7,41 +7,21 @@ let treeToClone = null; // Initialize as null
 let plantedTrees = 0;
 const requiredTreesToProgress = 10; // Set the required number of trees
 
-// Define an array of levels
-const levels = [
-    { requiredTrees: 10, message: "You've planted enough trees to progress to the next level!", nextLevel: "Eco-City Sustainability" },
-    { requiredTrees: 10, message: "Great job! You can move on to the next level!" }
-];
-
-// Initialize the current level
-let currentLevel = 0;
-
 // Function to update the tree count display
 function updateTreeCount() {
-    const treeCountDisplay = document.getElementById("tree-count");
-    if (treeCountDisplay) {
-        treeCountDisplay.textContent = `Trees Planted: ${plantedTrees}`;
+    const treePlantedCount = document.getElementById("tree-planted");
+    if (treePlantedCount) {
+        treePlantedCount.textContent = plantedTrees;
     }
 }
 
 // Function to check if the player can progress to the next level
 function checkProgress() {
-    if (plantedTrees >= levels[currentLevel].requiredTrees) {
-        alert(levels[currentLevel].message);
-
-        // Move to the next level
-        currentLevel++;
-
-        // Reset the plantedTrees count
-        plantedTrees = 0;
+    if (plantedTrees >= requiredTreesToProgress) {
+        alert("You've planted enough trees to progress to the next level!");
 
         // Redirect to the next level if available
-        if (currentLevel < levels.length) {
-            // Example: You can redirect the player to a new page for the next level
-            window.location.href = `game.html`;
-        } else {
-            alert("Congratulations! You've completed all levels.");
-        }
+        window.location.href = "next-level.html";
     }
     updateTreeCount(); // Update the tree count display
 }
@@ -49,19 +29,7 @@ function checkProgress() {
 // Event listener for adding trees to the inventory
 gameScreen.addEventListener("click", (event) => {
     if (treeToClone) {
-        // Create a new tree image to add to the game screen
-        const clonedTree = new Image();
-        clonedTree.src = treeToClone.src;
-        clonedTree.style.position = "absolute";
-
-        // Calculate the position to center the tree image at the cursor
-        const offsetX = event.clientX - gameScreen.getBoundingClientRect().left - (clonedTree.width / 2);
-        const offsetY = event.clientY - gameScreen.getBoundingClientRect().top - (clonedTree.height / 2);
-        clonedTree.style.left = offsetX + "px";
-        clonedTree.style.top = offsetY + "px";
-
-        // Add the cloned tree image to the game screen
-        gameScreen.appendChild(clonedTree);
+        // ...
 
         // Increment the plantedTrees counter
         plantedTrees++;
@@ -75,14 +43,7 @@ gameScreen.addEventListener("click", (event) => {
 // Event listener for selecting a tree to clone
 inventory.addEventListener("click", (event) => {
     if (event.target.tagName === "IMG") {
-        // Toggle the selected class for visual indication
-        if (event.target.classList.contains("selected")) {
-            event.target.classList.remove("selected");
-            treeToClone = null; // Clear the selection
-        } else {
-            event.target.classList.add("selected");
-            treeToClone = event.target; // Store the selected tree for cloning
-        }
+        // ...
     }
 });
 
