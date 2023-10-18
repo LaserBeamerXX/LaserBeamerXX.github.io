@@ -41,3 +41,14 @@ body {
     border: 2px solid #FFA726; /* Add a border to indicate selection */
     border-radius: 5px;
 }
+
+/* Add this CSS to your reforestation.css file or include it in your HTML file if preferred */
+
+/* Style for the tree count display */
+.tree-count {
+    font-size: 18px; /* Adjust the font size as needed */
+    color: #4CAF50; /* Set the text color */
+    margin-top: 10px; /* Add some spacing from the game screen and inventory */
+    text-align: center; /* Center the text horizontally */
+}
+
