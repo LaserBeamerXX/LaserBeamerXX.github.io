@@ -50,5 +50,8 @@ body {
     color: #4CAF50; /* Set the text color */
     margin-top: 10px; /* Add some spacing from the game screen and inventory */
     text-align: center; /* Center the text horizontally */
+    position: absolute; /* Position the element absolutely */
+    z-index: 1; /* Set a z-index value to place it on top of other elements */
 }
+
 
