@@ -1,3 +1,5 @@
+/* Existing CSS styles */
+
 body {
     margin: 0;
     padding: 0;
@@ -15,12 +17,6 @@ body {
     flex: 1;
     position: relative;
 }
-/* Add a style for the selected tree in the inventory */
-#inventory img.selected {
-    border: 2px solid #FFA726; /* Add a border to indicate selection */
-    border-radius: 5px;
-}
-
 
 #inventory {
     width: 20%;
@@ -38,4 +34,10 @@ body {
 #inventory img {
     max-width: 100px;
     cursor: pointer;
+}
+
+/* Combined style for the selected tree in the inventory */
+#inventory img.selected {
+    border: 2px solid #FFA726; /* Add a border to indicate selection */
+    border-radius: 5px;
 }
