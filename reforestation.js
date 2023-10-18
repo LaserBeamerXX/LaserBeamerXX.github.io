@@ -18,8 +18,8 @@ gameScreen.addEventListener("click", (event) => {
         clonedTree.style.top = offsetY + "px";
 
         // Make the cloned tree smaller
-        clonedTree.style.width = "50px"; // Adjust the size as needed
-        clonedTree.style.height = "50px"; // Adjust the size as needed
+        clonedTree.style.width = "20px"; // Adjust the size as needed
+        clonedTree.style.height = "20px"; // Adjust the size as needed
 
         // Add the cloned tree image to the game screen
         gameScreen.appendChild(clonedTree);
