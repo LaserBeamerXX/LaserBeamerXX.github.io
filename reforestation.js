@@ -2,7 +2,6 @@
 const gameScreen = document.getElementById("game-screen");
 const inventory = document.getElementById("inventory");
 let treeToClone = null; // Initialize as null
-
 // Event listener for adding trees to the inventory
 gameScreen.addEventListener("click", (event) => {
     if (treeToClone) {
