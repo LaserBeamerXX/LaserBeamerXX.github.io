@@ -40,10 +40,14 @@ body {
     margin: 0;
 }
 
-#inventory img {
-    max-width: 100px;
-    cursor: pointer;
-    display: inline; /* Display tree images inline for horizontal alignment */
+#inventory {
+    width: 100%; /* Make the inventory take up 100% width */
+    background-color: #71C0B7;
+    padding: 10px;
+    text-align: center;
+    overflow-y: hidden;
+    overflow-x: auto; /* Enable horizontal scrolling if necessary */
+    white-space: nowrap; /* Prevent text from wrapping in the inventory */
 }
 
 #inventory img.selected {
