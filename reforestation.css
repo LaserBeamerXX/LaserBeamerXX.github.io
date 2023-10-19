@@ -42,17 +42,23 @@ body {
     border-radius: 5px;
 }
 
-/* Update the CSS for the objectives and trees planted */
+
+/* Updated CSS for Objectives and Trees Planted text */
 #objectives {
     position: absolute;
-    top: 10px; /* Adjust the top position as needed */
-    left: 10px; /* Adjust the left position as needed */
+    top: 10px;
+    left: 10px;
     color: #FFFFFF;
+    font-size: 24px; /* Adjust the font size as needed */
+    font-family: Arial, sans-serif; /* Use a preferred font family */
 }
 
 #trees-planted {
     margin: 0;
+    font-size: 20px; /* Adjust the font size as needed */
+    font-weight: bold; /* Make it bold for emphasis */
 }
+
 
 /* Updated CSS for the Level Complete screen */
 #level-complete {
