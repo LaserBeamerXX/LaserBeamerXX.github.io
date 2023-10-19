@@ -1,5 +1,3 @@
-/* Existing CSS styles */
-
 body {
     margin: 0;
     padding: 0;
@@ -8,34 +6,83 @@ body {
 
 .game-container {
     display: flex;
-    flex-direction: column; /* Stack the game screen and inventory vertically */
-    height: 100vh;
+    justify-content: space-between;
     background-color: #EEEEEE;
 }
 
-/* Updated CSS for the game area and background image */
 .game-screen {
-    flex: 1; /* Allow it to take available space */
+    flex: 1;
     position: relative;
-    max-width: 100%; /* Set the maximum width to 100% of the container */
-    background-size: cover; /* Cover the entire game area with the background image */
+    max-width: 80%; /* Allow the game screen to take a maximum of 80% width */
+}
+
+#background-image {
+    width: 100%; /* Set the background image to 100% width of its container */
 }
 
 #inventory {
-    width: 100%; /* Set the width to 100% to stretch across the whole bottom */
-    height: 10vh;
+    flex: 0 0 100%; /* Make the inventory stretch across the whole bottom */
     background-color: #71C0B7;
     padding: 10px;
-    text-align: center;
     overflow-y: hidden; /* Remove the vertical scrollbar in the inventory */
-    overflow-x: auto; /* Add horizontal scrolling if needed */
-    position: absolute;
-    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
-/* The rest of your existing CSS styles */
+#inventory h2 {
+    color: #FFFFFF;
+    margin: 0;
+    font-size: 2.5vw; /* Set font size relative to the width of the inventory */
+    align-self: flex-start;
+}
 
-/* Updated CSS for the "Move to Next Level" button */
+#inventory img {
+    max-width: 15%; /* Set the image max-width as a percentage of the inventory width */
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+#inventory img.selected {
+    border: 2px solid #FFA726;
+    border-radius: 5px;
+}
+
+#objectives {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+}
+
+#trees-planted {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#level-complete {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #71C0B7;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1000;
+}
+
+#level-complete h2, #level-complete p, #next-level-button {
+    color: #FFFFFF;
+    font-size: 36px;
+}
+
 #next-level-button {
     background-color: #FFA726;
     border: none;
@@ -44,9 +91,19 @@ body {
     font-size: 24px;
     padding: 10px 20px;
     cursor: pointer;
-    margin-top: 20px; /* Add some top margin to separate it from the text */
+    margin-top: 20px;
 }
 
 #next-level-button:hover {
     background-color: #FF9800;
+}
+
+@media screen and (max-width: 768px) {
+    .game-container {
+        flex-direction: column;
+    }
+
+    .game-screen, #inventory {
+        width: 100%;
+    }
 }
