@@ -23,7 +23,7 @@ body {
 
 #inventory {
     width: 100%; /* Set the width to 100% to stretch across the whole bottom */
-    height: 20vh;
+    height: 10vh;
     background-color: #71C0B7;
     padding: 10px;
     text-align: center;
