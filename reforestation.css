@@ -23,14 +23,14 @@ body {
 }
 
 #inventory {
-    width: 40%;
-    height: 100%;
+    flex: 0 0 auto; /* Make the inventory container not grow or shrink */
+    width: 20%; /* Set the width of the inventory */
     background-color: #71C0B7;
     padding: 10px;
     text-align: center;
-    overflow-y: hidden; /* Disable vertical scroll */
+    overflow-y: hidden; /* Remove the vertical scrollbar in the inventory */
+    overflow-x: hidden; /* Remove the horizontal scrollbar in the inventory */
 }
-
 
 #inventory h2 {
     color: #FFFFFF;
