@@ -63,4 +63,7 @@ nextLevelButton.addEventListener("click", () => {
     // For this example, we'll hide the level complete screen
     const levelCompleteScreen = document.getElementById("level-complete");
     levelCompleteScreen.style.display = "none";
-}); 
+
+    // Redirect to the "ecocity.html" page
+    window.location.href = "ecocity.html";
+});
