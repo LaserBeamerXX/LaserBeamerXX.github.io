@@ -5,6 +5,42 @@ const objectives = document.getElementById("objectives");
 let treeToClone = null; // Initialize as null
 let plantedTrees = 0; // Initialize the count
 
+// Function to update the objectives text and check for level completion
+function updateObjectives() {
+    document.getElementById("trees-planted").textContent = `Plant ${plantedTrees}/10 Trees`;
+
+    // Check if the player has planted all 10 trees
+    if (plantedTrees === 10) {
+        // Display the level complete screen
+        const levelCompleteScreen = document.getElementById("level-complete");
+        levelCompleteScreen.style.display = "block";
+    }
+}
+
+// Event listener for the "Next Level" button
+const nextLevelButton = document.getElementById("next-level-button");
+nextLevelButton.addEventListener("click", () => {
+    // Perform actions to move to the next level here
+    // You can load a new game screen or perform other level transition logic
+    // For this example, we'll hide the level complete screen
+    const levelCompleteScreen = document.getElementById("level-complete");
+    levelCompleteScreen.style.display = "none";
+
+    // Redirect to the "ecocity.html" page
+    window.location.href = "ecocity.html";
+});
+
+// Function to adjust game screen size based on inventory size
+function resizeGameScreen() {
+    const inventoryWidth = inventory.clientWidth;
+    const maxGameScreenWidth = window.innerWidth - inventoryWidth;
+    gameScreen.style.maxWidth = maxGameScreenWidth + "px";
+}
+
+// Call the resizeGameScreen function initially and on window resize
+resizeGameScreen();
+window.addEventListener("resize", resizeGameScreen);
+
 // Event listener for adding trees to the inventory
 gameScreen.addEventListener("click", (event) => {
     if (treeToClone) {
@@ -40,30 +76,4 @@ inventory.addEventListener("click", (event) => {
             treeToClone = event.target; // Store the selected tree for cloning
         }
     }
-});
-
-
-// Function to update the objectives text and check for level completion
-function updateObjectives() {
-    document.getElementById("trees-planted").textContent = `Plant ${plantedTrees}/10 Trees`;
-
-    // Check if the player has planted all 10 trees
-    if (plantedTrees === 10) {
-        // Display the level complete screen
-        const levelCompleteScreen = document.getElementById("level-complete");
-        levelCompleteScreen.style.display = "block";
-    }
-}
-
-// Event listener for the "Next Level" button
-const nextLevelButton = document.getElementById("next-level-button");
-nextLevelButton.addEventListener("click", () => {
-    // Perform actions to move to the next level here
-    // You can load a new game screen or perform other level transition logic
-    // For this example, we'll hide the level complete screen
-    const levelCompleteScreen = document.getElementById("level-complete");
-    levelCompleteScreen.style.display = "none";
-
-    // Redirect to the "ecocity.html" page
-    window.location.href = "ecocity.html";
 });
