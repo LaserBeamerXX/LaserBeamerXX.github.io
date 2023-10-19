@@ -20,7 +20,7 @@ body {
 }
 
 #inventory {
-    width: 30%; /* Set the width of the inventory to 25% of the parent container */
+    width: 40%; /* Set the width of the inventory to 25% of the parent container */
     background-color: #71C0B7;
     padding: 10px;
     text-align: center;
