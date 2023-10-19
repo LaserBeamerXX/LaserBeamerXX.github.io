@@ -18,7 +18,7 @@ body {
 }
 
 #inventory {
-    flex: 0 0 20%; /* Make the inventory container not grow or shrink and set its width */
+    flex: 0 0 30%; /* Make the inventory container not grow or shrink and set its width */
     background-color: #71C0B7;
     padding: 10px;
     text-align: center;
