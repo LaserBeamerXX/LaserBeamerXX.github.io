@@ -1,3 +1,5 @@
+/* CSS in reforestation.css */
+
 body {
     margin: 0;
     padding: 0;
@@ -6,23 +8,23 @@ body {
 
 .game-container {
     display: flex;
+    justify-content: space-between;
     height: 100vh;
     background-color: #EEEEEE;
 }
 
-/* Updated CSS for the game area */
 .game-screen {
-    flex: 1; /* Allow it to take available space */
+    flex: 1;
     position: relative;
+    max-width: calc(100% - 20%); /* Adjust based on your desired layout */
 }
 
 #inventory {
-    min-width: 20%; /* Set a minimum width for the inventory */
+    flex: 0 0 20%;
     background-color: #71C0B7;
     padding: 10px;
     text-align: center;
-    overflow-y: hidden; /* Remove the vertical scrollbar in the inventory */
-    overflow-x: hidden; /* Remove the horizontal scrollbar in the inventory */
+    overflow-y: hidden;
 }
 
 #inventory h2 {
@@ -35,31 +37,26 @@ body {
     cursor: pointer;
 }
 
-/* Combined style for the selected tree in the inventory */
 #inventory img.selected {
-    border: 2px solid #FFA726; /* Add a border to indicate selection */
+    border: 2px solid #FFA726;
     border-radius: 5px;
 }
 
-
-/* Updated CSS for Objectives and Trees Planted text */
 #objectives {
     position: absolute;
     top: 10px;
     left: 10px;
     color: #FFFFFF;
-    font-size: 24px; /* Adjust the font size as needed */
-    font-family: Arial, sans-serif; /* Use a preferred font family */
+    font-size: 24px;
+    font-family: Arial, sans-serif;
 }
 
 #trees-planted {
     margin: 0;
-    font-size: 20px; /* Adjust the font size as needed */
-    font-weight: bold; /* Make it bold for emphasis */
+    font-size: 20px;
+    font-weight: bold;
 }
 
-
-/* Updated CSS for the Level Complete screen */
 #level-complete {
     display: none;
     position: fixed;
@@ -67,20 +64,19 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #71C0B7; /* Use the desired background color */
+    background-color: #71C0B7;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    z-index: 1000; /* Ensure it's on top of other content */
+    z-index: 1000;
 }
 
 #level-complete h2, #level-complete p, #next-level-button {
     color: #FFFFFF;
-    font-size: 36px; /* Adjust the font size as needed */
+    font-size: 36px;
 }
 
-/* Updated CSS for the "Move to Next Level" button */
 #next-level-button {
     background-color: #FFA726;
     border: none;
@@ -89,20 +85,19 @@ body {
     font-size: 24px;
     padding: 10px 20px;
     cursor: pointer;
-    margin-top: 20px; /* Add some top margin to separate it from the text */
+    margin-top: 20px;
 }
 
 #next-level-button:hover {
     background-color: #FF9800;
 }
 
-/* Media query to adjust layout for smaller screens */
 @media screen and (max-width: 768px) {
     .game-container {
-        flex-direction: column; /* Stack the game screen and inventory vertically */
+        flex-direction: column;
     }
 
     .game-screen, #inventory {
-        width: 100%; /* Set both to full width on smaller screens */
+        width: 100%;
     }
 }
