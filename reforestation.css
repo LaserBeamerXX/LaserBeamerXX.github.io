@@ -15,7 +15,7 @@ body {
 
 /* Reduce the width of the game screen */
 .game-screen {
-    flex: 0.8; /* Adjust the value as needed */
+    flex: 0.5; /* Adjust the value as needed */
     position: relative;
 }
 
