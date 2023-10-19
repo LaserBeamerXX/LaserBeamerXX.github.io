@@ -20,7 +20,7 @@ body {
 }
 
 #inventory {
-    width: 40%; /* Set the width of the inventory to 25% of the parent container */
+    flex: 0 0 30%; /* Make the inventory container not grow or shrink and set its width */
     background-color: #71C0B7;
     padding: 10px;
     text-align: center;
