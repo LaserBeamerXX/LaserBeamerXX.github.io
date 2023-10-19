@@ -19,12 +19,16 @@ body {
 }
 
 #inventory {
-    width: 25%; /* Adjust the width as needed */
+    #inventory {
+    width: 25%;
     background-color: #71C0B7;
     padding: 20px;
     text-align: center;
     overflow: hidden;
     font-size: 16px;
+    position: absolute;
+    bottom: 0; /* Adjust the 'bottom' value to move it to the bottom */
+
 }
 
 #inventory h2 {
