@@ -16,7 +16,9 @@ body {
 .game-screen {
     flex: 1;
     position: relative;
+    max-width: calc(100% - 20%); /* Set the maximum width to 80% of the container (100% - 20% for inventory) */
 }
+
 
 #background-image {
     width: 100%; /* Set the background image to 100% width of its container */
