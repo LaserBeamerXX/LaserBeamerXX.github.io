@@ -21,7 +21,7 @@ body {
 }
 
 #inventory {
-    min-width: 20%; /* Set a minimum width for the inventory */
+    min-width: 30%; /* Set a minimum width for the inventory */
     background-color: #71C0B7;
     padding: 10px;
     text-align: center;
