@@ -1,5 +1,3 @@
-/* Existing CSS styles */
-
 body {
     margin: 0;
     padding: 0;
@@ -20,14 +18,14 @@ body {
 }
 
 #inventory {
-    flex: 0 0 20%; /* Adjust the width as needed (e.g., 20%) */
+    flex: 0 0 20%; /* Make the inventory container not grow or shrink and set its width */
     background-color: #71C0B7;
     padding: 10px;
     text-align: center;
     overflow-y: hidden; /* Remove the vertical scrollbar in the inventory */
     overflow-x: hidden; /* Remove the horizontal scrollbar in the inventory */
-    /* Other styles for the inventory */
 }
+
 
 
 #inventory h2 {
