@@ -23,7 +23,7 @@ body {
     background-color: #71C0B7;
     padding: 10px;
     text-align: center;
-    overflow-y: auto;
+    overflow: hidden;
 }
 
 #inventory h2 {
