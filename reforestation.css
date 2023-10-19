@@ -23,7 +23,7 @@ body {
     background-color: #71C0B7;
     padding: 10px;
     text-align: center;
-    overflow-y: hidden; /* Hide the vertical scrollbar */
+    overflow: hidden; /* Hide both scrollbars */
 }
 
 #inventory h2 {
