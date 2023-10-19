@@ -21,14 +21,16 @@ body {
     max-width: 80%; /* Allow the game screen to take a maximum of 80% width */
 }
 
-#inventory {
-    flex: 0 0 20%; /* Make the inventory container not grow or shrink and set its width */
+ #inventory {
+    width: 25%; /* Set the width of the inventory to 25% of the parent container */
     background-color: #71C0B7;
     padding: 10px;
     text-align: center;
     overflow-y: hidden; /* Remove the vertical scrollbar in the inventory */
     overflow-x: hidden; /* Remove the horizontal scrollbar in the inventory */
+    /* Other styles for the inventory */
 }
+
 
 #inventory h2 {
     color: #FFFFFF;
