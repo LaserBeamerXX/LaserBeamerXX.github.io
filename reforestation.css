@@ -80,3 +80,18 @@ body {
 #level-complete h2, #level-complete p, #next-level-button {
     color: #FFFFFF;
 }
+
+/* Updated CSS for the "Move to Next Level" button */
+#next-level-button {
+    background-color: #FFA726;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: 24px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#next-level-button:hover {
+    background-color: #FF9800;
+}
