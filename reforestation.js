@@ -24,7 +24,7 @@ nextLevelButton.addEventListener("click", () => {
     // You can load a new game screen or perform other level transition logic
     // For this example, we'll hide the level complete screen
     const levelCompleteScreen = document.getElementById("level-complete");
-    levelCompleteScreen.style.display = "none";
+    levelCompleteScreen.style display = "none";
 
     // Redirect to the "ecocity.html" page
     window.location.href = "ecocity.html";
@@ -48,25 +48,17 @@ gameScreen.addEventListener("click", (event) => {
         const offsetX = event.clientX - gameScreen.getBoundingClientRect().left - (treeToClone.width / 2);
         const offsetY = event.clientY - gameScreen.getBoundingClientRect().top - (treeToClone.height / 2);
 
-        // Check if the calculated position is within the boundaries of the game screen
-        const gameScreenRect = gameScreen.getBoundingClientRect();
-        if (
-            offsetX >= 0 && offsetY >= 0 &&
-            offsetX + treeToClone.width <= gameScreenRect.width &&
-            offsetY + treeToClone.height <= gameScreenRect.height
-        ) {
-            // Create a new tree image and add it to the game screen
-            const clonedTree = new Image();
-            clonedTree.src = treeToClone.src;
-            clonedTree.style.position = "absolute";
-            clonedTree.style.left = offsetX + "px";
-            clonedTree.style.top = offsetY + "px";
-            gameScreen.appendChild(clonedTree);
+        // Create a new tree image and add it to the game screen
+        const clonedTree = new Image();
+        clonedTree.src = treeToClone.src;
+        clonedTree.style.position = "absolute";
+        clonedTree.style.left = offsetX + "px";
+        clonedTree.style.top = offsetY + "px";
+        gameScreen.appendChild(clonedTree);
 
-            // Increment the planted trees count
-            plantedTrees++;
-            updateObjectives();
-        }
+        // Increment the planted trees count
+        plantedTrees++;
+        updateObjectives();
     }
 });
 
