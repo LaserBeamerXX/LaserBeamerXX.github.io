@@ -45,8 +45,8 @@ window.addEventListener("resize", resizeGameScreen);
 gameScreen.addEventListener("click", (event) => {
     if (treeToClone) {
         // Calculate the position to center the tree image at the cursor
-        const offsetX = event.clientX - gameScreen.getBoundingClientRect().left - (treeToClone.width / 2);
-        const offsetY = event.clientY - gameScreen.getBoundingClientRect().top - treeToClone.height; // Adjusted offsetY to center the bottom
+        const offsetX = event.clientX - gameScreen.getBoundingClientRect().left - treeToClone.width / 2; // Adjusted offsetX
+        const offsetY = event.clientY - gameScreen.getBoundingClientRect().top - treeToClone.height / 2; // Adjusted offsetY
 
         // Create a new tree image and add it to the game screen
         const clonedTree = new Image();
@@ -61,6 +61,7 @@ gameScreen.addEventListener("click", (event) => {
         updateObjectives();
     }
 });
+
 
 // Event listener for selecting a tree to clone
 inventory.addEventListener("click", (event) => {
