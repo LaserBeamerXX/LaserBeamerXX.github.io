@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", function() {
+    // Your JavaScript code here
+    // ...
+
 // Store references to the game screen, inventory, and objectives
 const gameScreen = document.getElementById("game-screen");
 const inventory = document.getElementById("inventory");
