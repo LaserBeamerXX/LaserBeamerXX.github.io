@@ -1,5 +1,3 @@
-/* CSS in reforestation.css */
-
 body {
     margin: 0;
     padding: 0;
@@ -16,12 +14,11 @@ body {
 .game-screen {
     flex: 1;
     position: relative;
-    max-width: calc(100% - 20%); /* Set the maximum width to 80% of the container (100% - 20% for inventory) */
+    max-width: calc(100% - 20%);
 }
 
-
 #background-image {
-    width: 100%; /* Set the background image to 100% width of its container */
+    width: 100%;
 }
 
 #inventory {
@@ -34,6 +31,7 @@ body {
 
 #inventory h2 {
     color: #FFFFFF;
+    font-size: 24px;
     margin: 0;
 }
 
