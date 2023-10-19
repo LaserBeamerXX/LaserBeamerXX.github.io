@@ -24,7 +24,7 @@ nextLevelButton.addEventListener("click", () => {
     // You can load a new game screen or perform other level transition logic
     // For this example, we'll hide the level complete screen
     const levelCompleteScreen = document.getElementById("level-complete");
-    levelCompleteScreen.style display = "none";
+    levelCompleteScreen.style.display = "none"; // Fix: Use "style.display" to hide the level complete screen
 
     // Redirect to the "ecocity.html" page
     window.location.href = "ecocity.html";
