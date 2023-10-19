@@ -1,3 +1,5 @@
+/* Existing CSS styles */
+
 body {
     margin: 0;
     padding: 0;
@@ -6,90 +8,31 @@ body {
 
 .game-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Stack the game screen and inventory vertically */
     height: 100vh;
     background-color: #EEEEEE;
 }
 
-/* Updated CSS for the game area */
+/* Updated CSS for the game area and background image */
 .game-screen {
-    flex: 1;
+    flex: 1; /* Allow it to take available space */
     position: relative;
-    max-width: 100%; /* Allow the game screen to take the full width */
-}
-
-#background-image {
-    width: 100%; /* Set the background image to 100% width of its container */
-    max-height: 100vh; /* Ensure it doesn't go out of the visible area vertically */
-    object-fit: cover; /* Cover the container while maintaining aspect ratio */
+    max-width: 100%; /* Set the maximum width to 100% of the container */
+    background-size: cover; /* Cover the entire game area with the background image */
 }
 
 #inventory {
-    flex: 0 0 100%; /* Make the inventory take up 100% and not grow or shrink */
+    width: 100%; /* Set the width to 100% to stretch across the whole bottom */
     background-color: #71C0B7;
     padding: 10px;
     text-align: center;
     overflow-y: hidden; /* Remove the vertical scrollbar in the inventory */
-    overflow-x: auto; /* Enable horizontal scrolling if necessary */
-    white-space: nowrap; /* Prevent text from wrapping in the inventory */
+    overflow-x: auto; /* Add horizontal scrolling if needed */
 }
 
-#inventory h2 {
-    color: #FFFFFF;
-    text-align: left; /* Align the text to the left in the inventory */
-    margin: 0;
-}
+/* The rest of your existing CSS styles */
 
-#inventory {
-    width: 100%; /* Make the inventory take up 100% width */
-    background-color: #71C0B7;
-    padding: 10px;
-    text-align: center;
-    overflow-y: hidden;
-    overflow-x: auto; /* Enable horizontal scrolling if necessary */
-    white-space: nowrap; /* Prevent text from wrapping in the inventory */
-}
-
-#inventory img.selected {
-    border: 2px solid #FFA726;
-    border-radius: 5px;
-}
-
-#objectives {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    color: #FFFFFF;
-    font-size: 24px;
-    font-family: Arial, sans-serif;
-}
-
-#trees-planted {
-    margin: 0;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-#level-complete {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #71C0B7;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    z-index: 1000;
-}
-
-#level-complete h2, #level-complete p, #next-level-button {
-    color: #FFFFFF;
-    font-size: 36px;
-}
-
+/* Updated CSS for the "Move to Next Level" button */
 #next-level-button {
     background-color: #FFA726;
     border: none;
@@ -98,19 +41,9 @@ body {
     font-size: 24px;
     padding: 10px 20px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 20px; /* Add some top margin to separate it from the text */
 }
 
 #next-level-button:hover {
     background-color: #FF9800;
-}
-
-@media screen and (max-width: 768px) {
-    .game-container {
-        flex-direction: column;
-    }
-
-    .game-screen, #inventory {
-        width: 100%;
-    }
 }
