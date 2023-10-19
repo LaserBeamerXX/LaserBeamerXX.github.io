@@ -28,6 +28,8 @@ body {
     text-align: center;
     overflow-y: hidden; /* Remove the vertical scrollbar in the inventory */
     overflow-x: auto; /* Add horizontal scrolling if needed */
+    position: absolute;
+    bottom: 0;
 }
 
 /* The rest of your existing CSS styles */
