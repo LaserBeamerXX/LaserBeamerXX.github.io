@@ -15,12 +15,12 @@ body {
 
 /* Updated CSS for the game area */
 .game-screen {
-    flex-grow: 1; /* Allow it to grow and take available space */
+    flex: 1; /* Allow it to take available space */
     position: relative;
 }
 
 #inventory {
-    min-width: 20%; /* Set a minimum width for the inventory */
+    width: 20%; /* Set the width of the inventory */
     background-color: #71C0B7;
     padding: 10px;
     text-align: center;
