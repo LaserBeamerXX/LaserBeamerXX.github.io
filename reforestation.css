@@ -17,16 +17,13 @@ body {
 }
 
 #inventory {
-    flex: 0 0 auto; /* Prevent the inventory from growing or shrinking */
-    width: 20%; /* Set a specific width for the inventory */
-    max-width: 20%; /* Limit the maximum width of the inventory to 20% */
+    min-width: 20%; /* Set a minimum width for the inventory */
     background-color: #71C0B7;
     padding: 10px;
     text-align: center;
     overflow-y: hidden; /* Remove the vertical scrollbar in the inventory */
     overflow-x: hidden; /* Remove the horizontal scrollbar in the inventory */
 }
-
 
 #inventory h2 {
     color: #FFFFFF;
