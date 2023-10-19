@@ -22,23 +22,29 @@ body {
 }
 
 #inventory {
-    flex: 0 0 20%;
+    flex: 0 0 20%; /* Make the inventory take up 20% and not grow or shrink */
     background-color: #71C0B7;
+    text-align: left; /* Align text to the left */
     padding: 10px;
-    text-align: center;
-    overflow-y: hidden;
+    display: flex; /* Use flex layout to position text and image */
+    align-items: center; /* Vertically center content within the inventory */
+    justify-content: space-between; /* Space between text and image */
+    position: absolute;
+    bottom: 0; /* Position at the bottom of the screen */
+    left: 0; /* Position at the left of the screen */
+    overflow-y: hidden; /* Remove the vertical scrollbar in the inventory */
 }
 
 #inventory h2 {
     color: #FFFFFF;
-    font-size: 24px;
     margin: 0;
 }
 
 #inventory img {
-    max-width: 100px;
+    max-width: 80px; /* Adjust the image size */
     cursor: pointer;
 }
+
 
 #inventory img.selected {
     border: 2px solid #FFA726;
