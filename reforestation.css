@@ -13,24 +13,20 @@ body {
     background-color: #EEEEEE;
 }
 
-
-
+/* Updated CSS for the game area */
 .game-screen {
-    flex: 1;
+    flex: 1; /* Allow it to take available space */
     position: relative;
-    max-width: 80%; /* Allow the game screen to take a maximum of 80% width */
 }
 
- #inventory {
+#inventory {
     width: 25%; /* Set the width of the inventory to 25% of the parent container */
     background-color: #71C0B7;
     padding: 10px;
     text-align: center;
     overflow-y: hidden; /* Remove the vertical scrollbar in the inventory */
     overflow-x: hidden; /* Remove the horizontal scrollbar in the inventory */
-    /* Other styles for the inventory */
 }
-
 
 #inventory h2 {
     color: #FFFFFF;
