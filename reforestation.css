@@ -84,6 +84,7 @@ body {
 
 #level-complete h2, #level-complete p, #next-level-button {
     color: #FFFFFF;
+    font-size: 36px; /* Adjust the font size as needed */
 }
 
 /* Updated CSS for the "Move to Next Level" button */
@@ -95,10 +96,12 @@ body {
     font-size: 24px;
     padding: 10px 20px;
     cursor: pointer;
+    margin-top: 20px; /* Add some top margin to separate it from the text */
 }
 
 #next-level-button:hover {
     background-color: #FF9800;
 }
+
 
 
