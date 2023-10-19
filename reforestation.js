@@ -44,23 +44,29 @@ window.addEventListener("resize", resizeGameScreen);
 // Event listener for adding trees to the inventory
 gameScreen.addEventListener("click", (event) => {
     if (treeToClone) {
-        // Create a new tree image to add to the game screen
-        const clonedTree = new Image();
-        clonedTree.src = treeToClone.src;
-        clonedTree.style.position = "absolute";
-
         // Calculate the position to center the tree image at the cursor
-        const offsetX = event.clientX - gameScreen.getBoundingClientRect().left - (clonedTree.width / 2);
-        const offsetY = event.clientY - gameScreen.getBoundingClientRect().top - (clonedTree.height / 2);
-        clonedTree.style.left = offsetX + "px";
-        clonedTree.style.top = offsetY + "px";
+        const offsetX = event.clientX - gameScreen.getBoundingClientRect().left - (treeToClone.width / 2);
+        const offsetY = event.clientY - gameScreen.getBoundingClientRect().top - (treeToClone.height / 2);
 
-        // Add the cloned tree image to the game screen
-        gameScreen.appendChild(clonedTree);
+        // Check if the calculated position is within the boundaries of the game screen
+        const gameScreenRect = gameScreen.getBoundingClientRect();
+        if (
+            offsetX >= 0 && offsetY >= 0 &&
+            offsetX + treeToClone.width <= gameScreenRect.width &&
+            offsetY + treeToClone.height <= gameScreenRect.height
+        ) {
+            // Create a new tree image and add it to the game screen
+            const clonedTree = new Image();
+            clonedTree.src = treeToClone.src;
+            clonedTree.style.position = "absolute";
+            clonedTree.style.left = offsetX + "px";
+            clonedTree.style.top = offsetY + "px";
+            gameScreen.appendChild(clonedTree);
 
-        // Increment the planted trees count
-        plantedTrees++;
-        updateObjectives();
+            // Increment the planted trees count
+            plantedTrees++;
+            updateObjectives();
+        }
     }
 });
 
