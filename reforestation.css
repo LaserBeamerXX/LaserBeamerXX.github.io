@@ -15,16 +15,20 @@ body {
 .game-screen {
     flex: 1; /* Allow it to take available space */
     position: relative;
+    max-width: 80%; /* Limit the maximum width of the game screen to 80% */
 }
 
 #inventory {
-    flex: 0 0 20%;
+    flex: 0 0 auto; /* Prevent the inventory from growing or shrinking */
+    width: 20%; /* Set a specific width for the inventory */
+    max-width: 20%; /* Limit the maximum width of the inventory to 20% */
     background-color: #71C0B7;
     padding: 10px;
     text-align: center;
     overflow-y: hidden; /* Remove the vertical scrollbar in the inventory */
     overflow-x: hidden; /* Remove the horizontal scrollbar in the inventory */
 }
+
 
 #inventory h2 {
     color: #FFFFFF;
