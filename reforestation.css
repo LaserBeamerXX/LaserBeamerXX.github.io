@@ -19,22 +19,22 @@ body {
 }
 
 #inventory {
-    width: 30%; /* Adjust the width as needed */
+    width: 25%; /* Adjust the width as needed */
     background-color: #71C0B7;
-    padding: 20px; /* Increase padding for more space */
+    padding: 20px;
     text-align: center;
     overflow: hidden;
-    font-size: 18px; /* Increase the font size for text */
+    font-size: 16px;
 }
 
 #inventory h2 {
     color: #FFFFFF;
     margin: 0;
-    font-size: 24px; /* Increase the font size for the heading */
+    font-size: 20px;
 }
 
 #inventory img {
-    max-width: 150px; /* Increase the max-width for the images */
+    max-width: 120px; /* Adjust the max-width for the images */
     cursor: pointer;
 }
 
