@@ -14,7 +14,6 @@ body {
 .game-screen {
     flex: 1; /* Allow it to take available space */
     position: relative;
-    max-width: 80%; /* Limit the maximum width of the game screen to 80% */
 }
 
 #inventory {
