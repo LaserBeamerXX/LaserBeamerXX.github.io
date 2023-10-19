@@ -1,62 +1,72 @@
-/* Reset some default styles */
+/* Existing CSS styles */
+
 body {
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
 
-/* Game container styles */
 .game-container {
     display: flex;
     flex-direction: column; /* Stack the game screen and inventory vertically */
     height: 100vh;
     background-color: #EEEEEE;
-    position: relative; /* Added relative positioning to allow for absolute positioning of inventory */
 }
 
-/* Game screen styles with background image */
+/* Updated CSS for the game area and background image */
 .game-screen {
-    flex: 1;
+    flex: 1; /* Allow it to take available space */
     position: relative;
-    max-width: 100%;
-    background-size: cover;
+    max-width: 100%; /* Set the maximum width to 100% of the container */
+    background-size: cover; /* Cover the entire game area with the background image */
 }
 
-/* Inventory styles */
 #inventory {
-    width: 100%;
-    height: 20vh; /* Set the height to 20% of the viewport height (adjust as needed) */
+    width: 100%; /* Set the width to 100% to stretch across the whole bottom */
     background-color: #71C0B7;
     padding: 10px;
     text-align: center;
-    overflow-y: hidden;
-    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    overflow-y: hidden; /* Remove the vertical scrollbar in the inventory */
+    overflow-x: auto; /* Add horizontal scrolling if needed */
     position: absolute;
     bottom: 0;
 }
 
-/* Inventory text styles */
-#inventory h2 {
+/* Updated CSS for the "Move to Next Level" button */
+#next-level-button {
+    background-color: #FFA726;
+    border: none;
+    border-radius: 5px;
     color: #FFFFFF;
     font-size: 24px;
-    margin: 0;
-    text-align: left; /* Adjusted text alignment to the left */
-}
-
-/* Inventory image styles */
-#inventory img {
-    max-width: 100px; /* Adjusted the maximum width for the image */
+    padding: 10px 20px;
     cursor: pointer;
-    float: right; /* Float the image to the right */
+    margin-top: 20px; /* Add some top margin to separate it from the text */
 }
 
-/* Selected tree in the inventory styles */
+#next-level-button:hover {
+    background-color: #FF9800;
+}
+
+/* The following are the existing styles in your CSS file that have not changed */
+
+#inventory h2 {
+    color: #FFFFFF;
+    margin: 0;
+}
+
+#inventory img {
+    max-width: 100px;
+    cursor: pointer;
+}
+
+/* Combined style for the selected tree in the inventory */
 #inventory img.selected {
     border: 2px solid #FFA726;
     border-radius: 5px;
 }
 
-/* Objectives and Trees Planted text styles */
+/* Updated CSS for Objectives and Trees Planted text */
 #objectives {
     position: absolute;
     top: 10px;
@@ -64,7 +74,6 @@ body {
     color: #FFFFFF;
     font-size: 24px;
     font-family: Arial, sans-serif;
-    text-align: left; /* Adjusted text alignment to the left */
 }
 
 #trees-planted {
@@ -73,7 +82,7 @@ body {
     font-weight: bold;
 }
 
-/* Level Complete screen styles */
+/* Updated CSS for the Level Complete screen */
 #level-complete {
     display: none;
     position: fixed;
@@ -94,29 +103,15 @@ body {
     font-size: 36px;
 }
 
-/* Move to Next Level button styles */
-#next-level-button {
-    background-color: #FFA726;
-    border: none;
-    border-radius: 5px;
-    color: #FFFFFF;
-    font-size: 24px;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-#next-level-button:hover {
-    background-color: #FF9800;
-}
+/* The rest of your existing styles */
 
 /* Media query to adjust layout for smaller screens */
 @media screen and (max-width: 768px) {
     .game-container {
-        flex-direction: column; /* Stack the game screen and inventory vertically */
+        flex-direction: column;
     }
 
     .game-screen, #inventory {
-        width: 100%; /* Set both to full width on smaller screens */
+        width: 100%;
     }
 }
