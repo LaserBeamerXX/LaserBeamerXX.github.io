@@ -46,7 +46,6 @@ inventory.addEventListener("click", (event) => {
     }
 });
 
-
 // Function to update the objectives text and check for level completion
 function updateObjectives() {
     document.getElementById("trees-planted").textContent = `Plant ${plantedTrees}/10 Trees`;
