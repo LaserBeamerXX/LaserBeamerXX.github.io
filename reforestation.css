@@ -20,13 +20,15 @@ body {
 }
 
 #inventory {
-    width: 20%; /* Set the width of the inventory to 25% of the parent container */
+    flex: 0 0 20%; /* Adjust the width as needed (e.g., 20%) */
     background-color: #71C0B7;
     padding: 10px;
     text-align: center;
     overflow-y: hidden; /* Remove the vertical scrollbar in the inventory */
     overflow-x: hidden; /* Remove the horizontal scrollbar in the inventory */
+    /* Other styles for the inventory */
 }
+
 
 #inventory h2 {
     color: #FFFFFF;
