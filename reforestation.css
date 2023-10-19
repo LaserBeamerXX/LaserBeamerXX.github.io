@@ -6,22 +6,25 @@ body {
     overflow: hidden;
 }
 
-/* Updated CSS for the game area */
 .game-container {
     display: flex;
     justify-content: space-between;
+    min-width: 20%; /* Set the minimum width to 20% */
     height: 100vh;
     background-color: #EEEEEE;
 }
 
+
+
+/* Updated CSS for the game area */
 .game-screen {
-    flex: 1;
+    flex-grow: 1; /* Allow it to grow and take available space */
     position: relative;
-    max-width: 80%; /* Allow the game screen to take a maximum of 80% width */
 }
 
 #inventory {
-    flex: 0 0 20%; /* Make the inventory container not grow or shrink and set its width */
+    flex: 0 0 auto; /* Make the inventory container not grow or shrink */
+    width: 20%; /* Set the width of the inventory */
     background-color: #71C0B7;
     padding: 10px;
     text-align: center;
@@ -45,6 +48,7 @@ body {
     border-radius: 5px;
 }
 
+
 /* Updated CSS for Objectives and Trees Planted text */
 #objectives {
     position: absolute;
@@ -61,6 +65,7 @@ body {
     font-weight: bold; /* Make it bold for emphasis */
 }
 
+
 /* Updated CSS for the Level Complete screen */
 #level-complete {
     display: none;
@@ -70,7 +75,6 @@ body {
     width: 100%;
     height: 100%;
     background-color: #71C0B7; /* Use the desired background color */
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -80,6 +84,7 @@ body {
 
 #level-complete h2, #level-complete p, #next-level-button {
     color: #FFFFFF;
+    font-size: 36px; /* Adjust the font size as needed */
 }
 
 /* Updated CSS for the "Move to Next Level" button */
@@ -91,19 +96,11 @@ body {
     font-size: 24px;
     padding: 10px 20px;
     cursor: pointer;
+    margin-top: 20px; /* Add some top margin to separate it from the text */
 }
 
 #next-level-button:hover {
     background-color: #FF9800;
 }
 
-/* Media query to adjust layout for smaller screens */
-@media screen and (max-width: 768px) {
-    .game-container {
-        flex-direction: column; /* Stack the game screen and inventory vertically */
-    }
 
-    .game-screen, #inventory {
-        width: 100%; /* Set both to full width on smaller screens */
-    }
-}
