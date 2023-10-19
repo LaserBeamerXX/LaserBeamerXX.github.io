@@ -1,53 +1,62 @@
+/* Reset some default styles */
 body {
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
 
+/* Game container styles */
 .game-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Stack the game screen and inventory vertically */
+    height: 100vh;
     background-color: #EEEEEE;
+    position: relative; /* Added relative positioning to allow for absolute positioning of inventory */
 }
 
+/* Game screen styles with background image */
 .game-screen {
     flex: 1;
     position: relative;
-    max-width: 80%; /* Allow the game screen to take a maximum of 80% width */
+    max-width: 100%;
+    background-size: cover;
 }
 
-#background-image {
-    width: 100%; /* Set the background image to 100% width of its container */
-}
-
+/* Inventory styles */
 #inventory {
-    flex: 0 0 100%; /* Make the inventory stretch across the whole bottom */
+    width: 100%;
+    height: 20vh; /* Set the height to 20% of the viewport height (adjust as needed) */
     background-color: #71C0B7;
     padding: 10px;
-    overflow-y: hidden; /* Remove the vertical scrollbar in the inventory */
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    text-align: center;
+    overflow-y: hidden;
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    position: absolute;
+    bottom: 0;
 }
 
+/* Inventory text styles */
 #inventory h2 {
     color: #FFFFFF;
+    font-size: 24px;
     margin: 0;
-    font-size: 2.5vw; /* Set font size relative to the width of the inventory */
-    align-self: flex-start;
+    text-align: left; /* Adjusted text alignment to the left */
 }
 
+/* Inventory image styles */
 #inventory img {
-    max-width: 15%; /* Set the image max-width as a percentage of the inventory width */
+    max-width: 100px; /* Adjusted the maximum width for the image */
     cursor: pointer;
-    align-self: flex-end;
+    float: right; /* Float the image to the right */
 }
 
+/* Selected tree in the inventory styles */
 #inventory img.selected {
     border: 2px solid #FFA726;
     border-radius: 5px;
 }
 
+/* Objectives and Trees Planted text styles */
 #objectives {
     position: absolute;
     top: 10px;
@@ -55,6 +64,7 @@ body {
     color: #FFFFFF;
     font-size: 24px;
     font-family: Arial, sans-serif;
+    text-align: left; /* Adjusted text alignment to the left */
 }
 
 #trees-planted {
@@ -63,6 +73,7 @@ body {
     font-weight: bold;
 }
 
+/* Level Complete screen styles */
 #level-complete {
     display: none;
     position: fixed;
@@ -83,6 +94,7 @@ body {
     font-size: 36px;
 }
 
+/* Move to Next Level button styles */
 #next-level-button {
     background-color: #FFA726;
     border: none;
@@ -98,12 +110,13 @@ body {
     background-color: #FF9800;
 }
 
+/* Media query to adjust layout for smaller screens */
 @media screen and (max-width: 768px) {
     .game-container {
-        flex-direction: column;
+        flex-direction: column; /* Stack the game screen and inventory vertically */
     }
 
     .game-screen, #inventory {
-        width: 100%;
+        width: 100%; /* Set both to full width on smaller screens */
     }
 }
