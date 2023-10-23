@@ -1,71 +1,84 @@
-// JavaScript code for your "Eco-City Sustainability Challenge" level
+// JavaScript code for your "EcoCity" game
 const gameScreen = document.getElementById("game-screen");
 const infoPanel = document.getElementById("info-panel");
-
-// City planning variables
 let budget = 10000; // Starting budget
-let cityObjects = []; // Array to store placed objects in the city
-
-// Energy variables
+let carbonFootprint = 0; // Track carbon footprint
 let energySources = 0; // Number of energy sources in the city
-
-// Transportation variables
 let publicTransportation = false; // Track if public transportation is implemented
-
-// Waste management variables
 let recyclingProgram = false; // Track if recycling program is implemented
-
-// Ethical dilemmas variables
 let naturalParkPreserved = false; // Track if the natural park is preserved
 
 // Initialize the game
 function initializeGame() {
-    // Set up the cityscape and interactive elements on the game screen
-    // Display level objectives and information in the info panel
-    infoPanel.innerHTML = "<h2>Eco-City Sustainability Challenge</h2><p>Design a sustainable city by reducing carbon emissions and promoting ethical practices.</p>";
+    updateInfoPanel();
 
-    // Add event listeners for user interactions
-    gameScreen.addEventListener("click", handleCityPlanning);
+    document.querySelector(".build-residential").addEventListener("click", buildResidential);
+    document.querySelector(".build-commercial").addEventListener("click", buildCommercial);
+    document.querySelector(".build-industrial").addEventListener("click", buildIndustrial);
+    document.querySelector(".build-wind-turbine").addEventListener("click", buildWindTurbine);
+    document.querySelector(".build-solar-panel").addEventListener("click", buildSolarPanel);
+    document.querySelector(".implement-public-transportation").addEventListener("click", implementPublicTransportation);
+    document.querySelector(".implement-recycling-program").addEventListener("click", implementRecyclingProgram);
+    document.querySelector(".preserve-natural-park").addEventListener("click", preserveNaturalPark);
 }
 
-// Function to handle city planning
-function handleCityPlanning(event) {
-    // Implement your city planning logic here
+function buildResidential() {
     if (budget >= 1000) {
-        // Example: Add a residential building
-        const building = createBuilding("residential.png");
-        placeCityObject(building, event.clientX, event.clientY);
+        // Add logic to create and place a residential building
         budget -= 1000;
+        carbonFootprint += 50;
         updateInfoPanel();
     }
 }
 
-// Function to create a city object (building)
-function createBuilding(imagePath) {
-    const building = new Image();
-    building.src = imagePath;
-    return building;
+function buildCommercial() {
+    if (budget >= 1500) {
+        // Add logic to create and place a commercial building
+        budget -= 1500;
+        carbonFootprint += 75;
+        updateInfoPanel();
+    }
 }
 
-// Function to place a city object on the game screen
-function placeCityObject(object, x, y) {
-    object.style.position = "absolute";
-    object.style.left = x + "px";
-    object.style.top = y + "px";
-    gameScreen.appendChild(object);
-    cityObjects.push(object);
+function buildIndustrial() {
+    if (budget >= 2000) {
+        // Add logic to create and place an industrial building
+        budget -= 2000;
+        carbonFootprint += 100;
+        updateInfoPanel();
+    }
 }
 
-// Function to update the info panel
-function updateInfoPanel() {
-    infoPanel.innerHTML = `<h2>Eco-City Sustainability Challenge</h2>
-        <p>Budget: $${budget}</p>
-        <p>Energy Sources: ${energySources}</p>
-        <p>Public Transportation: ${publicTransportation ? "Implemented" : "Not Implemented"}</p>
-        <p>Recycling Program: ${recyclingProgram ? "Implemented" : "Not Implemented"}</p>
-        <p>Natural Park: ${naturalParkPreserved ? "Preserved" : "Developed"}</p>`;
+function buildWindTurbine() {
+    if (budget >= 2500) {
+        // Add logic to create and place a wind turbine
+        budget -= 2500;
+        carbonFootprint -= 50;
+        energySources++;
+        updateInfoPanel();
+    }
 }
 
-// Call the initialization function to start the level
-initializeGame();
+function buildSolarPanel() {
+    if (budget >= 3000) {
+        // Add logic to create and place a solar panel
+        budget -= 3000;
+        carbonFootprint -= 75;
+        energySources++;
+        updateInfoPanel();
+    }
+}
 
+function implementPublicTransportation() {
+    if (budget >= 4000 && !publicTransportation) {
+        // Add logic to implement public transportation
+        publicTransportation = true;
+        budget -= 4000;
+        carbonFootprint -= 100;
+        updateInfoPanel();
+    }
+}
+
+function implementRecyclingProgram() {
+    if (budget >= 3000 && !recyclingProgram) {
+        // Add logic to implement
