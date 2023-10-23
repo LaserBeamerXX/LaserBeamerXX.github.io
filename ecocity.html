@@ -3,38 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eco-City Sustainability Challenge</title> <!-- Updated title -->
-    <link rel="stylesheet" href="ecocity.css"> <!-- Updated CSS file reference -->
+    <title>EcoCity</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="game-container">
-    <div class="game-screen" id="game-screen">
-        <!-- Cityscape and interactive elements go here -->
-        <!-- Example: Cityscape background -->
-        <img src="cityscape.jpg" alt="Cityscape Background" class="cityscape">
-
-        <!-- Example: Buttons for interactive elements -->
-        <button class="build-residential">Build Residential</button>
-        <button class="build-commercial">Build Commercial</button>
-        <button class="build-industrial">Build Industrial</button>
-        <!-- Add more interactive elements as needed -->
+        <div class="game-screen" id="game-screen">
+            <!-- Cityscape and interactive elements go here -->
+        </div>
+        <div class="info-panel" id="info-panel">
+            <!-- Information and objectives go here -->
+        </div>
+        <div class="buttons">
+            <button class="build-residential">Build Residential</button>
+            <button class="build-commercial">Build Commercial</button>
+            <button class="build-industrial">Build Industrial</button>
+            <button class="build-wind-turbine">Build Wind Turbine</button>
+            <button class="build-solar-panel">Build Solar Panel</button>
+            <button class="implement-public-transportation">Implement Public Transportation</button>
+            <button class="implement-recycling-program">Implement Recycling Program</button>
+            <button class="preserve-natural-park">Preserve Natural Park</button>
+        </div>
     </div>
-    <div class="info-panel" id="info-panel">
-        <!-- Information and objectives go here -->
-        <h2>Information</h2>
-        <p>Welcome to the EcoCity Sustainability Challenge! Your goal is to create a sustainable and eco-friendly city while managing your budget.</p>
-        <p>Your budget: $10,000</p>
-
-        <h2>Objectives</h2>
-        <ul>
-            <li>Design a city with a low carbon footprint.</li>
-            <li>Implement public transportation to reduce traffic congestion.</li>
-            <li>Establish a recycling program to reduce waste.</li>
-            <li>Preserve the natural park for environmental ethics.</li>
-        </ul>
-    </div>
-</div>
-    <script src="ecocity.js"></script> <!-- Updated JavaScript file reference -->
+    <script src="game.js"></script>
 </body>
 </html>
-
