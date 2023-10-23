@@ -1,1 +1,30 @@
+/* Style the game screen and info panel as per your game's design */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.game-container {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    background-color: #EEEEEE;
+}
+
+.game-screen {
+    flex: 1;
+    position: relative;
+    background-image: url("cityscape.jpg"); /* Change to your cityscape image */
+    background-size: cover;
+}
+
+.info-panel {
+    width: 20%;
+    background-color: #71C0B7;
+    padding: 10px;
+    text-align: center;
+    overflow-y: auto;
+    color: #FFFFFF;
+}
 
