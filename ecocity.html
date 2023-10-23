@@ -4,27 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoCity</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ecocity.css">
 </head>
 <body>
     <div class="game-container">
         <div class="game-screen" id="game-screen">
-            <!-- Cityscape and interactive elements go here -->
+            <div class="cityscape">
+                <div class="building residential"></div>
+                <div class="building commercial"></div>
+                <div class "building industrial"></div>
+                <div class="road"></div>
+            </div>
         </div>
         <div class="info-panel" id="info-panel">
-            <!-- Information and objectives go here -->
-        </div>
-        <div class="buttons">
-            <button class="build-residential">Build Residential</button>
-            <button class="build-commercial">Build Commercial</button>
-            <button class="build-industrial">Build Industrial</button>
-            <button class="build-wind-turbine">Build Wind Turbine</button>
-            <button class="build-solar-panel">Build Solar Panel</button>
-            <button class="implement-public-transportation">Implement Public Transportation</button>
-            <button class="implement-recycling-program">Implement Recycling Program</button>
-            <button class="preserve-natural-park">Preserve Natural Park</button>
+            <h2>City Information</h2>
+            <p>Budget: $<span id="budget">10000</span></p>
+            <p>Carbon Footprint: <span id="carbon-footprint">0</span></p>
+            <h2>Objectives</h2>
+            <ul>
+                <li>Build eco-friendly structures.</li>
+                <li>Reduce carbon footprint.</li>
+                <li>Implement sustainable practices.</li>
+            </ul>
+            <button class="collect-waste">Collect Waste</button>
         </div>
     </div>
-    <script src="game.js"></script>
+    <script src="ecocity.js"></script>
 </body>
 </html>
