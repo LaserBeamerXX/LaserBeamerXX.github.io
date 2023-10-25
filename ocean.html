@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Guardians - Level 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="game-screen">
+            <!-- Ocean background -->
+            <img src="ocean-bg.jpg" alt="Ocean Background" id="ocean-bg">
+            
+            <!-- Sea turtle to be rescued -->
+            <img src="sea-turtle.png" alt="Sea Turtle" id="sea-turtle">
+        </div>
+        <div id="user-interface">
+            <!-- Trash collection progress -->
+            <div id="trash-collected">
+                Trash Collected: <span id="trash-counter">0</span>
+            </div>
+            <!-- Button to rescue sea turtle -->
+            <button id="rescue-button">Rescue Sea Turtle</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
