@@ -39,8 +39,6 @@ function checkGameOver() {
     }
 }
 
-
-
 // JavaScript code for the Energy Consumption Dashboard
 const dashboard = document.getElementById("dashboard");
 const currentUsage = dashboard.querySelector("p:nth-of-type(1)");
