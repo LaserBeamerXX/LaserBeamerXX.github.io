@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bill Nye's Climate Crusade - Energy-Efficient Home</title>
-    <link rel="stylesheet" href="climate-crusade.css">
+    <title>Energy Consumption Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-    <h1>Energy-Efficient Home</h1>
-    <div class="game-container">
-        <div class="game-screen" id="game-screen">
-            <div id="dashboard">
-                <h2>Energy Consumption Dashboard</h2>
-                <p>Current Energy Usage: 150 kWh</p>
-                <p>Potential Energy Savings: 30%</p>
+    <div class="dashboard-container">
+        <div class="dashboard">
+            <div class="current-usage">
+                <h2>Current Energy Usage</h2>
+                <p id="current-usage-value">100 kWh</p>
+            </div>
+            <div class="potential-upgrades">
+                <h2>Potential Upgrades</h2>
+                <ul id="upgrade-list">
+                    <li data-upgrade="LED Bulbs">LED Bulbs</li>
+                    <li data-upgrade="Solar Panels">Solar Panels</li>
+                    <!-- Add more upgrade options here -->
+                </ul>
             </div>
         </div>
-        <div class="inventory" id="inventory">
-            <h2>Upgrade Inventory</h2>
-        </div>
     </div>
-
-    <script src="climate-crusade.js"></script>
+    <script src="dashboard.js"></script>
 </body>
 </html>
