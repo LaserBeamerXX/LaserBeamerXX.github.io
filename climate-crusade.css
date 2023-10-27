@@ -1,56 +1,55 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    text-align: center;
-}
+/* Existing CSS styles */
 
-h1 {
-    color: #008080;
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 .game-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    justify-content: space-between;
+    height: 100vh;
+    background-color: #EEEEEE;
 }
 
 .game-screen {
     flex: 1;
-    padding: 20px;
+    position: relative;
 }
 
-.game-screen img {
-    max-width: 100%;
-    height: auto;
-}
-
-.inventory {
-    width: 30%;
-    padding: 20px;
+#inventory {
+    width: 20%;
     background-color: #71C0B7;
+    padding: 10px;
+    text-align: center;
+    overflow-y: auto;
 }
 
 #inventory h2 {
     color: #FFFFFF;
+    margin: 0;
 }
 
-#inventory ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#inventory ul li {
-    cursor: pointer;
+#dashboard {
+    width: 20%;
+    background-color: #A3C1AD;
     padding: 10px;
-    background-color: #4B8A74;
-    margin: 5px 0;
-    color: #FFFFFF;
-    transition: background-color 0.3s;
+    text-align: center;
 }
 
-#inventory ul li:hover {
-    background-color: #35645C;
+#dashboard h2 {
+    color: #FFFFFF;
+    margin: 0;
+}
+
+#dashboard p {
+    color: #333333;
+    font-weight: bold;
+}
+
+/* Combined style for the selected tree in the inventory */
+#inventory img.selected {
+    border: 2px solid #FFA726;
+    border-radius: 5px;
 }
