@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.game-container {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    background-color: #EEEEEE;
+}
+
+.game-screen {
+    flex: 1;
+    position: relative;
+}
+
+#inventory {
+    width: 20%;
+    background-color: #71C0B7;
+    padding: 10px;
+    text-align: center;
+    overflow-y: auto;
+}
+
+#inventory h2 {
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.upgrade {
+    background-color: #FFD700;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.upgrade:hover {
+    background-color: #FFA726;
+}
