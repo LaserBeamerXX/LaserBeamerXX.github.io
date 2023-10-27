@@ -27,7 +27,7 @@ nextLevelButton.addEventListener("click", () => {
     levelCompleteScreen.style.display = "none"; // Fix: Use "style.display" to hide the level complete screen
 
     // Redirect to the "ecocity.html" page
-    window.location.href = "ocean.html";
+    window.location.href = "energy-efficient-home.html";
 });
 
 // Function to adjust game screen size based on inventory size
