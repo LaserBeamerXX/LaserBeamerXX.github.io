@@ -1,4 +1,4 @@
-/* Existing CSS styles */
+/* CSS for the Energy Consumption Dashboard */
 
 body {
     margin: 0;
@@ -46,10 +46,4 @@ body {
 #dashboard p {
     color: #333333;
     font-weight: bold;
-}
-
-/* Combined style for the selected tree in the inventory */
-#inventory img.selected {
-    border: 2px solid #FFA726;
-    border-radius: 5px;
 }
