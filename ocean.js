@@ -19,7 +19,7 @@ trashCounter.textContent = 'Collected: ' + collectedTrash + '/' + trashTarget;
 
 const speed = 2; // Adjust the speed as needed
 
-let moveInterval = null; // Initialize the move interval
+let moveInterval = null;
 
 document.addEventListener('keydown', startMoving);
 document.addEventListener('keyup', stopMoving);
@@ -36,7 +36,7 @@ function startMoving(e) {
             break;
         case 'ArrowLeft':
         case 'a':
-            moveInterval = setInterval(() => moveSubmersible(-speed, speed), 16);
+            moveInterval = setInterval(() => moveSubmersible(-speed, -speed), 16);
             break;
         case 'ArrowRight':
         case 'd':
@@ -46,7 +46,7 @@ function startMoving(e) {
 }
 
 function stopMoving() {
-    clearInterval(moveInterval); // Stop the continuous movement interval
+    clearInterval(moveInterval);
 }
 
 function moveSubmersible(moveX, moveY) {
