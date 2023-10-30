@@ -19,7 +19,7 @@ trash.style.top = trashY + 'px';
 
 trashCounter.textContent = 'Collected: ' + collectedTrash + '/' + trashTarget;
 
-const speed = 50;
+const speed = 2;
 
 const movementKeys = {
     w: false,
@@ -28,6 +28,8 @@ const movementKeys = {
     d: false,
 };
 
+let moveInterval = null;
+
 document.addEventListener('keydown', startMoving);
 document.addEventListener('keyup', stopMoving);
 
@@ -35,14 +37,19 @@ function startMoving(e) {
     const key = e.key.toLowerCase();
     movementKeys[key] = true;
 
-    moveSubmersible();
+    if (!moveInterval) {
+        moveInterval = setInterval(moveSubmersible, 16);
+    }
 }
 
 function stopMoving(e) {
     const key = e.key.toLowerCase();
     movementKeys[key] = false;
 
-    moveSubmersible();
+    if (!Object.values(movementKeys).some((value) => value)) {
+        clearInterval(moveInterval);
+        moveInterval = null;
+    }
 }
 
 function moveSubmersible() {
