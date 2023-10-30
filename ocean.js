@@ -1,11 +1,9 @@
 const submarine = document.getElementById('submarine');
-const trash = document.getElementById('trash');
 const trashCounter = document.getElementById('trash-counter');
+const trashContainer = document.getElementById('trash-container');
 
 let submarineX = 50;
 let submarineY = 50;
-let trashX = 200;
-let trashY = 200;
 let collectedTrash = 0;
 const trashTarget = 10;
 
@@ -14,12 +12,10 @@ const submarineHeight = 100; // Adjust to the height of your submarine image
 
 submarine.style.left = submarineX + 'px';
 submarine.style.top = submarineY + 'px';
-trash.style.left = trashX + 'px';
-trash.style.top = trashY + 'px';
 
 trashCounter.textContent = 'Collected: ' + collectedTrash + '/' + trashTarget;
 
-const speed = 10;
+const speed = 2;
 
 const movementKeys = {
     w: false,
@@ -76,26 +72,52 @@ function moveSubmersible() {
 
 function checkTrashCollection() {
     const submarineRect = submarine.getBoundingClientRect();
-    const trashRect = trash.getBoundingClientRect();
 
-    if (
-        submarineRect.left < trashRect.right &&
-        submarineRect.right > trashRect.left &&
-        submarineRect.top < trashRect.bottom &&
-        submarineRect.bottom > trashRect.top
-    ) {
-        trashX = Math.random() * window.innerWidth;
-        trashY = Math.random() * window.innerHeight;
-        trash.style.left = trashX + 'px';
-        trash.style.top = trashY + 'px';
+    // Iterate over trash items and check for collisions
+    const trashItems = document.querySelectorAll('.trash-item');
+    trashItems.forEach((trashItem) => {
+        const trashRect = trashItem.getBoundingClientRect();
 
-        collectedTrash++;
-        trashCounter.textContent = 'Collected: ' + collectedTrash + '/' + trashTarget;
+        if (
+            submarineRect.left < trashRect.right &&
+            submarineRect.right > trashRect.left &&
+            submarineRect.top < trashRect.bottom &&
+            submarineRect.bottom > trashRect.top
+        ) {
+            // Remove the collected trash item
+            trashContainer.removeChild(trashItem);
 
-        if (collectedTrash >= trashTarget) {
-            alert('Level Complete! You collected ' + collectedTrash + ' trash items.');
+            collectedTrash++;
+            trashCounter.textContent = 'Collected: ' + collectedTrash + '/' + trashTarget;
+
+            if (collectedTrash >= trashTarget) {
+                alert('Level Complete! You collected ' + collectedTrash + ' trash items.');
+            }
         }
-    }
+    });
+}
+
+function createRandomTrash() {
+    const trashItem = document.createElement('img');
+    trashItem.classList.add('trash-item');
+    trashItem.src = 'bottle.svg'; // Adjust the image source
+    trashItem.alt = 'Trash';
+
+    const maxX = window.innerWidth - 50;
+    const maxY = window.innerHeight - 50;
+
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    trashItem.style.left = randomX + 'px';
+    trashItem.style.top = randomY + 'px';
+
+    trashContainer.appendChild(trashItem);
+}
+
+// Generate random trash items
+for (let i = 0; i < 10; i++) {
+    createRandomTrash();
 }
 
 // Adjust the initial position of the submarine to stay within the visible area
