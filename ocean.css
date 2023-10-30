@@ -1,49 +1,34 @@
-/* Styling for the game container */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000;
+    color: #fff;
+}
+
 #game-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #87CEEB; /* Light blue for the ocean */
-}
-
-/* Styling for the game screen */
-#game-screen {
+    width: 1000px;
+    height: 600px;
+    margin: 20px auto;
+    background-color: #0077b6;
     position: relative;
-    width: 800px; /* Adjust the dimensions as needed */
-    height: 400px;
 }
 
-/* Styling for the ocean background */
-#ocean-bg {
-    width: 100%;
-    height: 100%;
-}
-
-/* Styling for the sea turtle */
-#sea-turtle {
+#submarine {
+    width: 50px;
+    height: 30px;
+    background-color: #ff6b6b;
     position: absolute;
-    left: 50%; /* Position the turtle in the center */
     bottom: 10px;
-    transform: translateX(-50%);
-    width: 100px; /* Adjust the dimensions as needed */
+    left: 50px;
 }
 
-/* Styling for the user interface */
-#user-interface {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+.trash {
+    width: 20px;
+    height: 20px;
+    background-color: #f4a261;
+    position: absolute;
+    bottom: 20px;
 }
 
-/* Styling for the rescue button */
-#rescue-button {
-    background-color: #FFA726; /* Orange button */
-    color: #FFFFFF;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-}
+/* Add more CSS styles for other game elements */
