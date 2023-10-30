@@ -1,4 +1,5 @@
 const submarine = document.getElementById('submarine');
+const submarineImg = document.getElementById('submarine-img'); // Reference to the submarine image
 const trash = document.getElementById('trash');
 
 let submarineX = 50;
@@ -22,10 +23,16 @@ function moveSubmersible(e) {
             submarineY += 10;
             break;
         case 'ArrowLeft':
+        case 'a':
             submarineX -= 10;
+            // Mirror the submarine image when moving left
+            submarineImg.style.transform = 'scaleX(-1)';
             break;
         case 'ArrowRight':
+        case 'd':
             submarineX += 10;
+            // Reset the image transformation when moving right
+            submarineImg.style.transform = 'scaleX(1)';
             break;
     }
 
