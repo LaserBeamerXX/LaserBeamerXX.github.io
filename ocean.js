@@ -19,9 +19,6 @@ trashCounter.textContent = 'Collected: ' + collectedTrash + '/' + trashTarget;
 
 const speed = 2;
 
-document.addEventListener('keydown', startMoving);
-document.addEventListener('keyup', stopMoving);
-
 const movementKeys = {
     w: false,
     a: false,
@@ -29,12 +26,20 @@ const movementKeys = {
     d: false,
 };
 
+let moveInterval = null;
+
+document.addEventListener('keydown', startMoving);
+document.addEventListener('keyup', stopMoving);
+
 function startMoving(e) {
     const key = e.key.toLowerCase();
     movementKeys[key] = true;
 
     if (isDiagonalMovement()) {
         moveInterval = setInterval(moveSubmersible, 16);
+    } else {
+        clearInterval(moveInterval);
+        moveSubmersible(); // Move in the corresponding direction for individual keys
     }
 }
 
@@ -46,8 +51,6 @@ function stopMoving(e) {
         clearInterval(moveInterval);
     }
 }
-
-let moveInterval = null;
 
 function isDiagonalMovement() {
     return (
