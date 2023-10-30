@@ -17,6 +17,12 @@ body {
     height: 100px;
 }
 
+#submarine-img {
+    /* Make the submarine image responsive */
+    width: 100%;
+    height: auto;
+}
+
 #trash {
     position: absolute;
     width: 30px;
