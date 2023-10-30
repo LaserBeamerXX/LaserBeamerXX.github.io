@@ -1,49 +1,65 @@
-/* Styling for the game container */
-#game-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #87CEEB; /* Light blue for the ocean */
+const submarine = document.getElementById("submarine");
+const trash1 = document.getElementById("trash1");
+const trash2 = document.getElementById("trash2");
+
+let score = 0;
+const scoreDisplay = document.createElement("div");
+scoreDisplay.id = "score-display";
+scoreDisplay.textContent = `Score: ${score}`;
+document.body.appendChild(scoreDisplay);
+
+submarine.addEventListener("click", collectTrash);
+
+function collectTrash() {
+    // Calculate the distance between the submarine and each piece of trash
+    const submarineRect = submarine.getBoundingClientRect();
+    const trash1Rect = trash1.getBoundingClientRect();
+    const trash2Rect = trash2.getBoundingClientRect();
+
+    const distanceToTrash1 = getDistance(submarineRect, trash1Rect);
+    const distanceToTrash2 = getDistance(submarineRect, trash2Rect);
+
+    // Define a minimum distance for collection (adjust as needed)
+    const minDistance = 50;
+
+    if (distanceToTrash1 < minDistance) {
+        trash1.remove(); // Remove the trash element from the DOM
+        score += 1; // Increase the score
+        scoreDisplay.textContent = `Score: ${score}`;
+    }
+
+    if (distanceToTrash2 < minDistance) {
+        trash2.remove(); // Remove the trash element from the DOM
+        score += 1; // Increase the score
+        scoreDisplay.textContent = `Score: ${score}`;
+    }
 }
 
-/* Styling for the game screen */
-#game-screen {
-    position: relative;
-    width: 800px; /* Adjust the dimensions as needed */
-    height: 400px;
+function getDistance(rect1, rect2) {
+    const dx = rect1.x + rect1.width / 2 - (rect2.x + rect2.width / 2);
+    const dy = rect1.y + rect1.height / 2 - (rect2.y + rect2.height / 2);
+    return Math.sqrt(dx * dx + dy * dy);
 }
 
-/* Styling for the ocean background */
-#ocean-bg {
-    width: 100%;
-    height: 100%;
+// Basic submarine movement (left and right) - you can expand on this
+document.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+        moveSubmarine(-10); // Move the submarine left
+    } else if (event.key === "ArrowRight") {
+        moveSubmarine(10); // Move the submarine right
+    }
+});
+
+function moveSubmarine(distance) {
+    const submarineRect = submarine.getBoundingClientRect();
+    const currentLeft = submarineRect.left;
+    const newLeft = currentLeft + distance;
+    const oceanWidth = 1000; // Width of the game container
+
+    // Ensure the submarine stays within the game container
+    if (newLeft >= 0 && newLeft + submarineRect.width <= oceanWidth) {
+        submarine.style.left = `${newLeft}px`;
+    }
 }
 
-/* Styling for the sea turtle */
-#sea-turtle {
-    position: absolute;
-    left: 50%; /* Position the turtle in the center */
-    bottom: 10px;
-    transform: translateX(-50%);
-    width: 100px; /* Adjust the dimensions as needed */
-}
-
-/* Styling for the user interface */
-#user-interface {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-}
-
-/* Styling for the rescue button */
-#rescue-button {
-    background-color: #FFA726; /* Orange button */
-    color: #FFFFFF;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-}
+// You can add time limit and win/lose conditions as needed
