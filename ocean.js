@@ -1,18 +1,24 @@
 const submarine = document.getElementById('submarine');
 const submarineImg = document.getElementById('submarine-img');
 const trash = document.getElementById('trash');
+const trashCounter = document.getElementById('trash-counter'); // Create an element to display the collected trash count
 
 let submarineX = 50;
 let submarineY = 50;
 let trashX = 200;
 let trashY = 200;
+let collectedTrash = 0; // Initialize the collected trash count
+const trashTarget = 10; // Set the target number of trash items to collect
 
 submarine.style.left = submarineX + 'px';
 submarine.style.top = submarineY + 'px';
 trash.style.left = trashX + 'px';
 trash.style.top = trashY + 'px';
 
-const speed = 10; // Adjust the speed as needed
+// Display the initial collected trash count
+trashCounter.textContent = 'Collected: ' + collectedTrash + '/' + trashTarget;
+
+const speed = 10;
 
 document.addEventListener('keydown', moveSubmersible);
 
@@ -41,7 +47,6 @@ function moveSubmersible(e) {
             break;
     }
 
-    // Update both X and Y positions simultaneously
     submarineX += moveX;
     submarineY += moveY;
 
@@ -65,5 +70,13 @@ function checkTrashCollection() {
         trashY = Math.random() * window.innerHeight;
         trash.style.left = trashX + 'px';
         trash.style.top = trashY + 'px';
+
+        collectedTrash++; // Increase the collected trash count
+        trashCounter.textContent = 'Collected: ' + collectedTrash + '/' + trashTarget; // Update the displayed count
+
+        if (collectedTrash >= trashTarget) {
+            // When the target is reached, display a message or trigger level completion
+            alert('Level Complete! You collected ' + collectedTrash + ' trash items.');
+        }
     }
 }
