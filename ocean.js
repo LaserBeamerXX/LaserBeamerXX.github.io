@@ -1,5 +1,5 @@
 const submarine = document.getElementById('submarine');
-const submarineImg = document.getElementById('submarine-img'); // Reference to the submarine image
+const submarineImg = document.getElementById('submarine-img');
 const trash = document.getElementById('trash');
 
 let submarineX = 50;
@@ -12,26 +12,28 @@ submarine.style.top = submarineY + 'px';
 trash.style.left = trashX + 'px';
 trash.style.top = trashY + 'px';
 
+const speed = 10; // Adjust the speed as needed
+
 document.addEventListener('keydown', moveSubmersible);
 
 function moveSubmersible(e) {
-    switch(e.key) {
+    switch (e.key) {
         case 'ArrowUp':
-            submarineY -= 10;
+        case 'w':
+            submarineY -= speed;
             break;
         case 'ArrowDown':
-            submarineY += 10;
+        case 's':
+            submarineY += speed;
             break;
         case 'ArrowLeft':
         case 'a':
-            submarineX -= 10;
-            // Mirror the submarine image when moving left
+            submarineX -= speed;
             submarineImg.style.transform = 'scaleX(-1)';
             break;
         case 'ArrowRight':
         case 'd':
-            submarineX += 10;
-            // Reset the image transformation when moving right
+            submarineX += speed;
             submarineImg.style.transform = 'scaleX(1)';
             break;
     }
