@@ -42,3 +42,9 @@ body {
     color: white;
     font-size: 18px;
 }
+
+.trash-item {
+    width: 30px; /* Adjust to match your image dimensions */
+    height: 30px;
+    /* Add any additional styling for the trash items as needed */
+}
