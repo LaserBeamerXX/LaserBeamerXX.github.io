@@ -17,26 +17,33 @@ const speed = 10; // Adjust the speed as needed
 document.addEventListener('keydown', moveSubmersible);
 
 function moveSubmersible(e) {
+    let moveX = 0;
+    let moveY = 0;
+
     switch (e.key) {
         case 'ArrowUp':
         case 'w':
-            submarineY -= speed;
+            moveY = -speed;
             break;
         case 'ArrowDown':
         case 's':
-            submarineY += speed;
+            moveY = speed;
             break;
         case 'ArrowLeft':
         case 'a':
-            submarineX -= speed;
+            moveX = -speed;
             submarineImg.style.transform = 'scaleX(-1)';
             break;
         case 'ArrowRight':
         case 'd':
-            submarineX += speed;
+            moveX = speed;
             submarineImg.style.transform = 'scaleX(1)';
             break;
     }
+
+    // Update both X and Y positions simultaneously
+    submarineX += moveX;
+    submarineY += moveY;
 
     submarine.style.left = submarineX + 'px';
     submarine.style.top = submarineY + 'px';
