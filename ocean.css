@@ -44,6 +44,7 @@ body {
 }
 
 .trash-item {
+    z-index: 1; /* Set a higher z-index to ensure it's on top */
     width: 30px; /* Adjust to match your image dimensions */
     height: 30px;
     /* Add any additional styling for the trash items as needed */
