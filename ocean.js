@@ -17,35 +17,39 @@ trash.style.top = trashY + 'px';
 
 trashCounter.textContent = 'Collected: ' + collectedTrash + '/' + trashTarget;
 
-const speed = 10;
+const speed = 2; // Adjust the speed as needed
 
-document.addEventListener('keydown', moveSubmersible);
+let moveInterval = null; // Initialize the move interval
 
-function moveSubmersible(e) {
-    let moveX = 0;
-    let moveY = 0;
+document.addEventListener('keydown', startMoving);
+document.addEventListener('keyup', stopMoving);
 
+function startMoving(e) {
     switch (e.key) {
         case 'ArrowUp':
         case 'w':
-            moveY = -speed;
+            moveInterval = setInterval(() => moveSubmersible(-speed, -speed), 16);
             break;
         case 'ArrowDown':
         case 's':
-            moveY = speed;
+            moveInterval = setInterval(() => moveSubmersible(speed, speed), 16);
             break;
         case 'ArrowLeft':
         case 'a':
-            moveX = -speed;
-            submarineImg.style.transform = 'scaleX(-1)';
+            moveInterval = setInterval(() => moveSubmersible(-speed, speed), 16);
             break;
         case 'ArrowRight':
         case 'd':
-            moveX = speed;
-            submarineImg.style.transform = 'scaleX(1)'; // Reset the transformation when moving right
+            moveInterval = setInterval(() => moveSubmersible(speed, -speed), 16);
             break;
     }
+}
 
+function stopMoving() {
+    clearInterval(moveInterval); // Stop the continuous movement interval
+}
+
+function moveSubmersible(moveX, moveY) {
     submarineX += moveX;
     submarineY += moveY;
 
