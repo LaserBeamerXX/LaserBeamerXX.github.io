@@ -17,39 +17,54 @@ trash.style.top = trashY + 'px';
 
 trashCounter.textContent = 'Collected: ' + collectedTrash + '/' + trashTarget;
 
-const speed = 2; // Adjust the speed as needed
-
-let moveInterval = null;
+const speed = 2;
 
 document.addEventListener('keydown', startMoving);
 document.addEventListener('keyup', stopMoving);
 
+const movementKeys = {
+    w: false,
+    a: false,
+    s: false,
+    d: false,
+};
+
 function startMoving(e) {
-    switch (e.key) {
-        case 'ArrowUp':
-        case 'w':
-            moveInterval = setInterval(() => moveSubmersible(-speed, -speed), 16);
-            break;
-        case 'ArrowDown':
-        case 's':
-            moveInterval = setInterval(() => moveSubmersible(speed, speed), 16);
-            break;
-        case 'ArrowLeft':
-        case 'a':
-            moveInterval = setInterval(() => moveSubmersible(-speed, -speed), 16);
-            break;
-        case 'ArrowRight':
-        case 'd':
-            moveInterval = setInterval(() => moveSubmersible(speed, -speed), 16);
-            break;
+    const key = e.key.toLowerCase();
+    movementKeys[key] = true;
+
+    if (isDiagonalMovement()) {
+        moveInterval = setInterval(moveSubmersible, 16);
     }
 }
 
-function stopMoving() {
-    clearInterval(moveInterval);
+function stopMoving(e) {
+    const key = e.key.toLowerCase();
+    movementKeys[key] = false;
+
+    if (!isDiagonalMovement()) {
+        clearInterval(moveInterval);
+    }
 }
 
-function moveSubmersible(moveX, moveY) {
+let moveInterval = null;
+
+function isDiagonalMovement() {
+    return (
+        (movementKeys.w && (movementKeys.a || movementKeys.d)) ||
+        (movementKeys.s && (movementKeys.a || movementKeys.d))
+    );
+}
+
+function moveSubmersible() {
+    let moveX = 0;
+    let moveY = 0;
+
+    if (movementKeys.w) moveY -= speed;
+    if (movementKeys.s) moveY += speed;
+    if (movementKeys.a) moveX -= speed;
+    if (movementKeys.d) moveX += speed;
+
     submarineX += moveX;
     submarineY += moveY;
 
