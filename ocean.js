@@ -1,6 +1,4 @@
-
 const submarine = document.getElementById('submarine');
-const submarineImg = document.getElementById('submarine-img');
 const trashCounter = document.getElementById('trash-counter');
 const trashContainer = document.getElementById('trash-container');
 
@@ -14,9 +12,11 @@ const submarineHeight = 100; // Adjust to the height of your submarine image
 
 submarine.style.left = submarineX + 'px';
 submarine.style.top = submarineY + 'px';
+
 trashCounter.textContent = 'Collected: ' + collectedTrash + '/' + trashTarget;
 
 const speed = 2;
+
 const movementKeys = {
     w: false,
     a: false,
@@ -97,13 +97,6 @@ function checkTrashCollection() {
     });
 }
 
-// Generate random trash items
-if (document.querySelectorAll('.trash-item').length < trashTarget) {
-    for (let i = 0; i < trashTarget; i++) {
-        createRandomTrash();
-    }
-}
-
 function createRandomTrash() {
     const trashItem = document.createElement('img');
     trashItem.classList.add('trash-item');
@@ -122,6 +115,11 @@ function createRandomTrash() {
     trashContainer.appendChild(trashItem);
 }
 
+// Generate random trash items
+for (let i = 0; i < 10; i++) {
+    createRandomTrash();
+}
+
 // Adjust the initial position of the submarine to stay within the visible area
 window.addEventListener('resize', () => {
     submarineX = Math.max(0, Math.min(window.innerWidth - submarineWidth, submarineX));
@@ -129,3 +127,4 @@ window.addEventListener('resize', () => {
     submarine.style.left = submarineX + 'px';
     submarine.style.top = submarineY + 'px';
 });
+
