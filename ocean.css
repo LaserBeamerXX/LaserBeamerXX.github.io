@@ -15,18 +15,18 @@ body {
 }
 
 #submarine {
+    /* No background-color property; instead, use an image */
     width: 50px;
     height: 30px;
-    background-color: #ff6b6b;
     position: absolute;
     bottom: 10px;
     left: 50px;
 }
 
 .trash {
+    /* No background-color property; instead, use an image */
     width: 20px;
     height: 20px;
-    background-color: #f4a261;
     position: absolute;
     bottom: 20px;
 }
