@@ -8,20 +8,13 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
+    background: url("ocean.png") no-repeat center center fixed;
+    background-size: cover;
     background-color: #0077BE;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-}
-
-.background-image {
-    background-image: url("ocean.png");
-    background-size: cover; /* Use "cover" to fit the background to the screen */
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
 }
 
 .submersible {
