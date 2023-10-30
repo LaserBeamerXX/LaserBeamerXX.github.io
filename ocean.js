@@ -1,5 +1,4 @@
 const submarine = document.getElementById('submarine');
-const submarineImg = document.getElementById('submarine-img');
 const trash = document.getElementById('trash');
 const trashCounter = document.getElementById('trash-counter');
 
@@ -9,6 +8,9 @@ let trashX = 200;
 let trashY = 200;
 let collectedTrash = 0;
 const trashTarget = 10;
+
+const submarineWidth = 150; // Adjust to the width of your submarine image
+const submarineHeight = 100; // Adjust to the height of your submarine image
 
 submarine.style.left = submarineX + 'px';
 submarine.style.top = submarineY + 'px';
@@ -26,8 +28,6 @@ const movementKeys = {
     d: false,
 };
 
-let moveInterval = null;
-
 document.addEventListener('keydown', startMoving);
 document.addEventListener('keyup', stopMoving);
 
@@ -35,28 +35,14 @@ function startMoving(e) {
     const key = e.key.toLowerCase();
     movementKeys[key] = true;
 
-    if (isDiagonalMovement()) {
-        moveInterval = setInterval(moveSubmersible, 16);
-    } else {
-        clearInterval(moveInterval);
-        moveSubmersible(); // Move in the corresponding direction for individual keys
-    }
+    moveSubmersible();
 }
 
 function stopMoving(e) {
     const key = e.key.toLowerCase();
     movementKeys[key] = false;
 
-    if (!isDiagonalMovement()) {
-        clearInterval(moveInterval);
-    }
-}
-
-function isDiagonalMovement() {
-    return (
-        (movementKeys.w && (movementKeys.a || movementKeys.d)) ||
-        (movementKeys.s && (movementKeys.a || movementKeys.d))
-    );
+    moveSubmersible();
 }
 
 function moveSubmersible() {
@@ -70,6 +56,10 @@ function moveSubmersible() {
 
     submarineX += moveX;
     submarineY += moveY;
+
+    // Ensure the submarine stays within the visible area
+    submarineX = Math.max(0, Math.min(window.innerWidth - submarineWidth, submarineX));
+    submarineY = Math.max(0, Math.min(window.innerHeight - submarineHeight, submarineY));
 
     submarine.style.left = submarineX + 'px';
     submarine.style.top = submarineY + 'px';
@@ -100,3 +90,11 @@ function checkTrashCollection() {
         }
     }
 }
+
+// Adjust the initial position of the submarine to stay within the visible area
+window.addEventListener('resize', () => {
+    submarineX = Math.max(0, Math.min(window.innerWidth - submarineWidth, submarineX));
+    submarineY = Math.max(0, Math.min(window.innerHeight - submarineHeight, submarineY));
+    submarine.style.left = submarineX + 'px';
+    submarine.style.top = submarineY + 'px';
+});
