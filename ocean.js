@@ -19,7 +19,7 @@ trash.style.top = trashY + 'px';
 
 trashCounter.textContent = 'Collected: ' + collectedTrash + '/' + trashTarget;
 
-const speed = 2;
+const speed = 8;
 
 const movementKeys = {
     w: false,
