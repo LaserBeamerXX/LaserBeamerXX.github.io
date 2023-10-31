@@ -32,7 +32,6 @@ body {
     position: absolute;
     width: 30px;
     height: 30px;
-    background-color: #FFF;
 }
 
 #trash-counter {
@@ -42,3 +41,5 @@ body {
     color: none;
     font-size: 18px;
 }
+
+
