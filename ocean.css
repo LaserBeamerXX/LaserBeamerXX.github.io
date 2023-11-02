@@ -21,11 +21,17 @@ body {
     position: absolute;
     width: 150px;
     height: 100px;
+    transform: scaleX(1); /* Initial horizontal scale */
 }
 
 #submarine-img {
     width: 100%;
     height: auto;
+}
+
+/* Mirror the submarine image when moving right */
+.submersible.mirrored {
+    transform: scaleX(-1);
 }
 
 #trash {
@@ -41,5 +47,3 @@ body {
     color: none;
     font-size: 18px;
 }
-
-
