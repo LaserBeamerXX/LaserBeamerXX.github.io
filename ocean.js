@@ -59,7 +59,12 @@ function moveSubmersible() {
     if (movementKeys.w) moveY -= speed;
     if (movementKeys.s) moveY += speed;
     if (movementKeys.a) moveX -= speed;
-    if (movementKeys.d) moveX += speed;
+    if (movementKeys.d) {
+        moveX += speed;
+        submarine.classList.add('mirrored'); // Mirror the submarine image
+    } else {
+        submarine.classList.remove('mirrored'); // Remove the mirror effect
+    }
 
     submarineX += moveX;
     submarineY += moveY;
@@ -85,7 +90,7 @@ function checkTrashCollection() {
         submarineRect.bottom > trashRect.top
     ) {
         trashX = Math.random() * window.innerWidth;
-        trashY = Math.random() * window.innerHeight;
+        trashY = Math.random() * (window.innerHeight - 50); // Adjust the value for the desired height
         trash.style.left = trashX + 'px';
         trash.style.top = trashY + 'px';
 
