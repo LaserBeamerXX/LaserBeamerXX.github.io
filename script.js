@@ -1,6 +1,12 @@
-// Add an event listener to the "Start Game" button
-document.getElementById("start-button").addEventListener("click", function () {
-    // You can add code here to transition to the game screen or load game assets.
-    // For a simple example, you can redirect to another page:
-    window.location.href = " reforestation.html";
-});
+import { WORDS } from "./words.js";
+
+const NUMBER_OF_GUESSES = 6
+let guessesRemaining = NUMBER_OF_GUESSES;
+let currentGuess = [];
+let nextLetter = 0;
+let rightGuessString = WORDS[Math.floor(Math.random() * WORDS.length)]
+console.log(rightGuessString)
+
+
+
+
