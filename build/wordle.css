@@ -17,5 +17,9 @@ hr {
     width: 350px;
     height: 420px;
     background-color: green;
+    margin: 0 auto;
+    margin-top: 3px;
+    display: flex;
+    flex-wrap: wrap;
     
 }
