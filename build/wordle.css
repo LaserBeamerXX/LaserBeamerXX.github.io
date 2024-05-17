@@ -6,8 +6,16 @@ body {
 hr {
     width: 500px
 }
+
 #title {
     font-size: 36px;
     font-weight: bold;
     letter-spacing: 2px;
+}
+
+#board {
+    width: 350px;
+    height: 420px;
+    background-color: green;
+    
 }
