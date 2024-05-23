@@ -17,14 +17,14 @@ window.onload = function(){
 function initialize() {
     
     // Create the game board
-  for (let r = 0; r < height; r++) {
-      for (let c = 0; c < width; c++) {
-          // <span id="0-0" class="title">P</span>
-          let tile = document.createElement("span");
-          tile.id = r.toString() + "-" + c.toString();
-          tile.classList.add("tile");
-          title.innerText = "P;"
-          document.getElementById("board").appendChild(tile);
-      }
-  }
+    for (let r = 0; r < height; r++) {
+        for (let c = 0; c < width; c++) {
+            // <span id="0-0" class="tile">P</span>
+            let tile = document.createElement("span");
+            tile.id = r.toString() + "-" + c.toString();
+            tile.classList.add("tile");
+            tile.innerText = "P";
+            document.getElementById("board").appendChild(tile);
+        }
+    }
 }
