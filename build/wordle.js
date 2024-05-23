@@ -23,8 +23,17 @@ function initialize() {
             let tile = document.createElement("span");
             tile.id = r.toString() + "-" + c.toString();
             tile.classList.add("tile");
-            tile.innerText = "P";
+            tile.innerText = "";
             document.getElementById("board").appendChild(tile);
         }
     }
+    
+    
+    // Listen for Key Press
+    document.addEventListener("keyup", (e) => {
+        if (gameOver) return;
+
+        alert(e.code);
+        
+    })
 }
