@@ -22,9 +22,9 @@ function initialize() {
           // <span id="0-0" class="title">P</span>
           let tile = document.createElement("span");
           tile.id = r.toString() + "-" + c.toString();
-          tile.classList("tile");
+          tile.classList.add("tile");
           title.innerText = "P;"
-          document.getElementsById("board").appendChild(tile);
+          document.getElementById("board").appendChild(tile);
       }
   }
 }
