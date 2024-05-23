@@ -15,15 +15,16 @@ window.onload = function(){
 
 
 function initialize() {
+    
     // Create the game board
-    for (let r = 0; r < height; r++) {
-        for (let c = 0; c < width; c++) {
-            // <span id="0-0" class="title"></span>
-            let tile = document.createElement("span");
-            tile.id = r.toString() + "-" + c.toString();
-            tile.classList("title");
-            title.innerText = "P";
-            document.getElementsById("board").appendChild(tile);
-    }
+  for (let r = 0; r < height; r++) {
+      for (let c = 0; c < width; c++) {
+          // <span id="0-0" class="title">P</span>
+          let tile = document.createElement("span");
+          tile.id = r.toString() + "-" + c.toString();
+          tile.classList("tile");
+          title.innerText = "P;"
+          document.getElementsById("board").appendChild(tile);
+      }
   }
 }
