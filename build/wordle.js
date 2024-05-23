@@ -33,7 +33,15 @@ function initialize() {
     document.addEventListener("keyup", (e) => {
         if (gameOver) return;
 
-        alert(e.code);
-        
+        // alert(e.code);
+        if ("KeyA" <= e.code && e.code <= "KeyZ") {
+            if (col < width) {
+                let currTile = document.getElementById(row.to.String() + '-' + col.toString());
+                if (currTile.innerText == "") {
+                    currTile.innerText = e.code[3];
+                    col += 1;
+                }
+            }
+        }
     })
 }
