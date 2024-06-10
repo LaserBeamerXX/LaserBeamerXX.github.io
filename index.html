@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixar Storytelling Quiz</title>
+    <title>Pixar Quiz</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -115,15 +115,40 @@
             const quizForm = document.getElementById('quiz-form');
             const formData = new FormData(quizForm);
             let score = 0;
+            let feedback = '';
 
-            if (formData.get('q1') === 'B') score++;
-            if (formData.get('q2') === 'B') score++;
-            if (formData.get('q3') === 'C') score++;
-            if (formData.get('q4') === 'B') score++;
-            if (formData.get('q5') === 'A') score++;
+            if (formData.get('q1') === 'B') {
+                score++;
+            } else {
+                feedback += '<p>Question 1: The correct answer is B. Once Upon a Time There Was</p>';
+            }
+
+            if (formData.get('q2') === 'B') {
+                score++;
+            } else {
+                feedback += '<p>Question 2: The correct answer is B. To put characters in tough situations</p>';
+            }
+
+            if (formData.get('q3') === 'C') {
+                score++;
+            } else {
+                feedback += '<p>Question 3: The correct answer is C. Sadness</p>';
+            }
+
+            if (formData.get('q4') === 'B') {
+                score++;
+            } else {
+                feedback += '<p>Question 4: The correct answer is B. By giving them real opinions</p>';
+            }
+
+            if (formData.get('q5') === 'A') {
+                score++;
+            } else {
+                feedback += '<p>Question 5: The correct answer is A. The point where everything clicks and the lesson is learned</p>';
+            }
 
             const result = document.getElementById('result');
-            result.textContent = `You scored ${score} out of 5.`;
+            result.innerHTML = `You scored ${score} out of 5.<br>${feedback}`;
         }
     </script>
 </body>
