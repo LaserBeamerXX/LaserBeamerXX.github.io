@@ -1,113 +1,130 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Poptropica</title>
-	<meta content="">
-  <style>
-	::-webkit-scrollbar {
-    display: none;
-	}
-
-	html, body {
-		width: 100% !important;
-		height: 100% !important;
-		margin: 0 !important;
-		left: 0 !important;
-		top: 0 !important;
-		overflow: hidden !important;
-	}
-  </style>
-	<script type="text/javascript">console.log('Poptropica running!') /* this is here because of https://github.com/electron/electron/issues/1117 */</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixar Storytelling Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question h3 {
+            margin-bottom: 10px;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            margin-bottom: 10px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
 </head>
-
 <body>
+    <div class="quiz-container">
+        <h1>Pixar Storytelling Quiz</h1>
+        <form id="quiz-form">
+            <div class="question">
+                <h3>1. What is the first step in Pixar's typical story structure?</h3>
+                <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> A. Everyday</li>
+                    <li><input type="radio" name="q1" value="B"> B. Once Upon a Time There Was</li>
+                    <li><input type="radio" name="q1" value="C"> C. One Day</li>
+                    <li><input type="radio" name="q1" value="D"> D. Until Finally</li>
+                </ul>
+            </div>
+            <div class="question">
+                <h3>2. What is Pixar's approach to coincidences in their films?</h3>
+                <ul class="options">
+                    <li><input type="radio" name="q2" value="A"> A. To get characters out of trouble</li>
+                    <li><input type="radio" name="q2" value="B"> B. To put characters in tough situations</li>
+                    <li><input type="radio" name="q2" value="C"> C. To provide easy solutions</li>
+                    <li><input type="radio" name="q2" value="D"> D. To introduce new characters</li>
+                </ul>
+            </div>
+            <div class="question">
+                <h3>3. Which emotion does Joy from Inside Out initially ignore?</h3>
+                <ul class="options">
+                    <li><input type="radio" name="q3" value="A"> A. Fear</li>
+                    <li><input type="radio" name="q3" value="B"> B. Anger</li>
+                    <li><input type="radio" name="q3" value="C"> C. Sadness</li>
+                    <li><input type="radio" name="q3" value="D"> D. Disgust</li>
+                </ul>
+            </div>
+            <div class="question">
+                <h3>4. How does Pixar ensure their characters feel real and complex?</h3>
+                <ul class="options">
+                    <li><input type="radio" name="q4" value="A"> A. By making them always agreeable</li>
+                    <li><input type="radio" name="q4" value="B"> B. By giving them real opinions</li>
+                    <li><input type="radio" name="q4" value="C"> C. By avoiding internal conflicts</li>
+                    <li><input type="radio" name="q4" value="D"> D. By focusing on their strengths only</li>
+                </ul>
+            </div>
+            <div class="question">
+                <h3>5. What is a "Pixar Moment"?</h3>
+                <ul class="options">
+                    <li><input type="radio" name="q5" value="A"> A. The point where everything clicks and the lesson is learned</li>
+                    <li><input type="radio" name="q5" value="B"> B. The climax of the film's action</li>
+                    <li><input type="radio" name="q5" value="C"> C. The introduction of a new character</li>
+                    <li><input type="radio" name="q5" value="D"> D. The opening scene of the film</li>
+                </ul>
+            </div>
+            <button type="button" onclick="submitQuiz()">Submit</button>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
 
-	<webview id="poptropica-webview" src="https://www.poptropica.com/?login_mode=1" allowpopups style="overflow: hidden; width:100%; height:100%;" partition="persist:webview"></webview>
+    <script>
+        function submitQuiz() {
+            const quizForm = document.getElementById('quiz-form');
+            const formData = new FormData(quizForm);
+            let score = 0;
 
-<script>
-const css = `::-webkit-scrollbar {
-    display: none;
-}
+            if (formData.get('q1') === 'B') score++;
+            if (formData.get('q2') === 'B') score++;
+            if (formData.get('q3') === 'C') score++;
+            if (formData.get('q4') === 'B') score++;
+            if (formData.get('q5') === 'A') score++;
 
-#video-panel, #bottom, #quiz, #billboard, #videoOverlay, #playwireVideos, #left_wrapper, #right_wrapper, #wrapper, .footer-section, a.modal-login-close, #pw-oop-bottom_rail {
-    display: none !important;
-}
-
-body, html {
-    background: #373B3D;
-}
-
-html, body, #middle, #flashContent, .bxslider, img, #modal-login-div {
-    width: 100% !important;
-    height: 100% !important;
-    margin: 0 !important;
-    left: 0 !important;
-    top: 0 !important;
-    overflow: hidden !important;
-}
-
-div {
-    height: 100%;
-}
-
-#modal-login-div {
-    border: none !important;
-    background-color: rgba(55, 55, 55, 0.97) !important;
-    background-image: url('https://www.poptropica.com/images/logo-1.png');
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: 50% 15%;
-    background-position-x: 50%;
-    background-position-y: 15%;
-    background-size: 70vmin;
-}
-
-#modal-login-new-player-msg {
-    font-size: 16px !important;
-		color: rgba(255, 255, 255, 0.6) !important;
-}
-
-a {
-	color: rgba(255, 255, 255, 0.9) !important;
-}
-
-#modal-login-form {
-    margin-top: 30vh;
-}
-
-input, button {
-    width: 70vmin !important;
-}
-
-canvas {
-	margin-left: 0px !important;
-}
-`
-const webview = document.querySelector('webview')
-webview.addEventListener('dom-ready', () => {
-  webview.insertCSS(css)
-})
-</script>
-<script>
-// In renderer process (web page).
-const { ipcRenderer } = require('electron')
-
-let current_version = ipcRenderer.sendSync('synchronous-message', 'current_version')
-
-fetch('https://api.github.com/repos/venashial/Poptropica-Desktop/releases/latest')
-  .then(response => response.json())
-  .then(data => check_versions(data.tag_name));
-
-function check_versions(latest_version) {
-
-if ("v" + current_version != latest_version) {
-	if (confirm(`A newer version, ${latest_version} is available! Click "OK" to download it!`)) {
-		window.open("https://github.com/venashial/Poptropica-Desktop/releases/latest", '_blank');
-		window.close()
-	}
-}
-
-}
-
-</script>
+            const result = document.getElementById('result');
+            result.textContent = `You scored ${score} out of 5.`;
+        }
+    </script>
 </body>
 </html>
