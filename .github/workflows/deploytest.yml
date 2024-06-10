@@ -30,33 +30,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
       - name: Setup Pages
         uses: actions/configure-pages@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '14'  # Ensure this matches your project's Node.js version
-
-      - name: Install dependencies
-        run: |
-          if [ -f yarn.lock ]; then
-            yarn install
-          else
-            npm install
-          fi
-
-      - name: Build project
-        run: |
-          # Add your build script here if necessary
-          # e.g., npm run build or yarn build
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: .  # Adjust this if your build outputs to a specific directory
-
+          path: .  # Upload the entire repository
       - name: Deploy to GitHub Pages
         id: deployment_html_js_css
         uses: actions/deploy-pages@v2
